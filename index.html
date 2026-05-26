@@ -1,0 +1,2040 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🚐 USA RV 2027 — 5 גברים, 21 יום</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg2: #111118;
+    --bg3: #1a1a24;
+    --card: #16161f;
+    --border: #2a2a3a;
+    --accent: #ff4d1c;
+    --accent2: #ffb800;
+    --accent3: #00e5ff;
+    --green: #00ff88;
+    --text: #f0f0f0;
+    --muted: #888899;
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-body: 'Heebo', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--font-body); min-height: 100vh; overflow-x: hidden; }
+
+  /* ── SCROLLBAR ── */
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(10,10,15,0.92); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 20px; height: 52px;
+  }
+  .nav-logo { font-family: var(--font-display); font-size: 22px; letter-spacing: 2px; color: var(--accent); }
+  .nav-links { display: flex; gap: 4px; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .nav-links::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    background: none; border: none; color: var(--muted); font-family: var(--font-body);
+    font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    padding: 6px 10px; border-radius: 6px; cursor: pointer; white-space: nowrap;
+    transition: all .2s;
+  }
+  .nav-btn:hover, .nav-btn.active { color: var(--text); background: var(--bg3); }
+  .nav-btn.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+
+  /* ── SECTIONS ── */
+  section { min-height: 100vh; padding: 72px 0 40px; display: none; }
+  section.active { display: block; animation: fadeIn .35s ease; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: translateY(0); } }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  @media (max-width: 640px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px;
+  }
+  .card-accent { border-left: 3px solid var(--accent); }
+  .card-green { border-left: 3px solid var(--green); }
+  .card-blue { border-left: 3px solid var(--accent3); }
+  .card-yellow { border-left: 3px solid var(--accent2); }
+
+  /* ── SECTION HEADER ── */
+  .section-header { margin-bottom: 28px; }
+  .section-label {
+    font-family: var(--font-mono); font-size: 11px; color: var(--accent);
+    letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-label::after { content:''; flex:1; height:1px; background: var(--accent); opacity: .3; }
+  .section-title { font-family: var(--font-display); font-size: clamp(36px, 8vw, 64px); line-height: .95; color: var(--text); }
+  .section-sub { color: var(--muted); font-size: 14px; margin-top: 8px; line-height: 1.6; }
+
+  /* ── TAGS ── */
+  .tag {
+    display: inline-block; padding: 3px 10px; border-radius: 20px;
+    font-size: 11px; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+  }
+  .tag-red { background: rgba(255,77,28,.15); color: var(--accent); border: 1px solid rgba(255,77,28,.3); }
+  .tag-green { background: rgba(0,255,136,.12); color: var(--green); border: 1px solid rgba(0,255,136,.3); }
+  .tag-blue { background: rgba(0,229,255,.12); color: var(--accent3); border: 1px solid rgba(0,229,255,.3); }
+  .tag-yellow { background: rgba(255,184,0,.12); color: var(--accent2); border: 1px solid rgba(255,184,0,.3); }
+
+  /* ── STAT BOX ── */
+  .stat-box { text-align: center; padding: 20px 12px; }
+  .stat-num { font-family: var(--font-display); font-size: clamp(36px, 7vw, 56px); line-height: 1; color: var(--accent); }
+  .stat-label { font-size: 11px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 4px; }
+  .stat-sub { font-size: 13px; color: var(--text); margin-top: 4px; }
+
+  /* ── BADGE LIST ── */
+  .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 20px 0; }
+
+  /* ── COVER SECTION ── */
+  #cover {
+    min-height: 100vh; display: flex !important; flex-direction: column;
+    align-items: center; justify-content: center; text-align: center;
+    position: relative; overflow: hidden;
+    background: radial-gradient(ellipse at 20% 50%, rgba(255,77,28,.08) 0%, transparent 60%),
+                radial-gradient(ellipse at 80% 20%, rgba(0,229,255,.06) 0%, transparent 50%),
+                var(--bg);
+  }
+  .cover-grid {
+    position: absolute; inset: 0;
+    background-image: linear-gradient(var(--border) 1px, transparent 1px),
+                      linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 40px 40px; opacity: .3;
+  }
+  .cover-content { position: relative; z-index: 2; padding: 20px; max-width: 800px; }
+  .cover-eyebrow {
+    font-family: var(--font-mono); font-size: 12px; letter-spacing: 4px;
+    color: var(--accent); text-transform: uppercase; margin-bottom: 20px;
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+  }
+  .cover-eyebrow span { width: 40px; height: 1px; background: var(--accent); }
+  .cover-title {
+    font-family: var(--font-display); font-size: clamp(64px, 18vw, 160px);
+    line-height: .9; letter-spacing: -2px; color: var(--text);
+    text-shadow: 0 0 60px rgba(255,77,28,.3);
+  }
+  .cover-title .highlight { color: var(--accent); }
+  .cover-subtitle {
+    font-family: var(--font-display); font-size: clamp(20px, 5vw, 42px);
+    color: var(--muted); letter-spacing: 4px; margin-top: 8px;
+  }
+  .cover-stats {
+    display: flex; justify-content: center; gap: 0; margin-top: 40px;
+    border: 1px solid var(--border); border-radius: 12px; overflow: hidden;
+    background: rgba(255,255,255,.02);
+  }
+  .cover-stat {
+    flex: 1; padding: 16px 8px; text-align: center;
+    border-right: 1px solid var(--border);
+  }
+  .cover-stat:last-child { border-right: none; }
+  .cover-stat-num { font-family: var(--font-display); font-size: clamp(24px, 5vw, 40px); color: var(--accent2); }
+  .cover-stat-lbl { font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-top: 2px; }
+  .cover-btn {
+    margin-top: 32px; padding: 14px 32px;
+    background: var(--accent); border: none; border-radius: 8px;
+    color: white; font-family: var(--font-body); font-size: 14px; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; cursor: pointer;
+    transition: all .2s;
+    box-shadow: 0 8px 32px rgba(255,77,28,.4);
+  }
+  .cover-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 40px rgba(255,77,28,.5); }
+
+  /* ── ITINERARY ── */
+  .week-tabs { display: flex; gap: 8px; margin-bottom: 20px; overflow-x: auto; padding-bottom: 4px; }
+  .week-tab {
+    padding: 8px 16px; border-radius: 8px; border: 1px solid var(--border);
+    background: var(--bg3); color: var(--muted); font-family: var(--font-body);
+    font-size: 12px; font-weight: 700; letter-spacing: 1px; cursor: pointer;
+    transition: all .2s; white-space: nowrap;
+  }
+  .week-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .week-content { display: none; }
+  .week-content.active { display: block; }
+
+  .day-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; margin-bottom: 10px; overflow: hidden;
+    transition: all .2s;
+  }
+  .day-card:hover { border-color: rgba(255,77,28,.4); }
+  .day-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; cursor: pointer;
+  }
+  .day-num {
+    font-family: var(--font-display); font-size: 28px; color: var(--accent);
+    min-width: 40px; line-height: 1;
+  }
+  .day-title-block { flex: 1; }
+  .day-title { font-weight: 700; font-size: 14px; }
+  .day-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .day-tags { display: flex; gap: 4px; flex-wrap: wrap; margin-top: 4px; }
+  .day-arrow { color: var(--muted); font-size: 18px; transition: transform .2s; }
+  .day-card.open .day-arrow { transform: rotate(180deg); }
+  .day-body { display: none; padding: 0 16px 16px; border-top: 1px solid var(--border); }
+  .day-card.open .day-body { display: block; }
+  .day-info-row { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .day-info-item {
+    background: var(--bg3); border-radius: 8px; padding: 8px 12px;
+    font-size: 12px; flex: 1; min-width: 120px;
+  }
+  .day-info-item strong { color: var(--accent2); display: block; font-size: 10px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+  .attraction-row { margin-top: 12px; }
+  .attraction-row h4 { font-size: 12px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; }
+  .attraction-item {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 13px;
+  }
+  .attraction-item:last-child { border-bottom: none; }
+  .attraction-name { display: flex; align-items: center; gap: 6px; }
+  .attraction-price { font-family: var(--font-mono); font-size: 12px; color: var(--green); }
+  .attraction-link { font-size: 10px; color: var(--accent3); text-decoration: none; }
+  .attraction-link:hover { text-decoration: underline; }
+
+  /* ── MAP/ROUTE SECTION ── */
+  .route-map {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; overflow: hidden; margin-bottom: 16px;
+  }
+  .route-map-header {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(255,77,28,.1), rgba(0,229,255,.05));
+    border-bottom: 1px solid var(--border);
+    font-family: var(--font-display); font-size: 22px; letter-spacing: 2px;
+  }
+  .route-stops { padding: 16px; }
+  .route-stop {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 10px 0; border-bottom: 1px solid var(--border);
+    position: relative;
+  }
+  .route-stop:last-child { border-bottom: none; }
+  .stop-dot {
+    width: 28px; height: 28px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-mono); font-size: 10px; font-weight: 700;
+    flex-shrink: 0; margin-top: 2px;
+  }
+  .stop-dot-base { background: rgba(255,77,28,.2); color: var(--accent); border: 2px solid var(--accent); }
+  .stop-dot-camp { background: rgba(0,255,136,.15); color: var(--green); border: 2px solid var(--green); }
+  .stop-dot-city { background: rgba(0,229,255,.15); color: var(--accent3); border: 2px solid var(--accent3); }
+  .stop-info { flex: 1; }
+  .stop-name { font-weight: 700; font-size: 14px; }
+  .stop-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .stop-details { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 6px; }
+  .stop-detail { font-size: 11px; background: var(--bg3); padding: 2px 8px; border-radius: 4px; }
+  .stop-price { font-family: var(--font-mono); font-size: 13px; color: var(--green); flex-shrink: 0; align-self: center; }
+  .route-connector {
+    width: 1px; height: 16px; background: var(--border);
+    margin-left: 14px;
+  }
+
+  /* ── BUDGET ── */
+  .budget-total-card {
+    background: linear-gradient(135deg, rgba(255,77,28,.12), rgba(255,184,0,.06));
+    border: 1px solid rgba(255,77,28,.4);
+    border-radius: 12px; padding: 24px; text-align: center; margin-bottom: 20px;
+  }
+  .budget-total-label { font-size: 12px; color: var(--muted); letter-spacing: 2px; text-transform: uppercase; }
+  .budget-total-num { font-family: var(--font-display); font-size: clamp(48px, 12vw, 80px); color: var(--accent); line-height: 1; margin: 8px 0; }
+  .budget-total-sub { font-size: 14px; color: var(--muted); }
+  .budget-total-per { font-family: var(--font-display); font-size: 28px; color: var(--accent2); }
+
+  .budget-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 12px 0; border-bottom: 1px solid var(--border);
+  }
+  .budget-row:last-child { border-bottom: none; }
+  .budget-row-name { display: flex; align-items: center; gap: 10px; font-size: 14px; }
+  .budget-icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+  .budget-row-amounts { text-align: right; }
+  .budget-amount { font-family: var(--font-mono); font-size: 14px; color: var(--green); }
+  .budget-per { font-size: 11px; color: var(--muted); }
+
+  .budget-bar-wrap { margin-top: 16px; }
+  .budget-bar-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+  .budget-bar-track { height: 6px; background: var(--bg3); border-radius: 3px; overflow: hidden; }
+  .budget-bar-fill { height: 100%; border-radius: 3px; transition: width .8s ease; }
+
+  /* ── LOGISTICS ── */
+  .checklist-item {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 12px 0; border-bottom: 1px solid var(--border); font-size: 13px;
+  }
+  .checklist-item:last-child { border-bottom: none; }
+  .check-icon { font-size: 18px; flex-shrink: 0; margin-top: 1px; }
+  .checklist-item-content { flex: 1; }
+  .checklist-item-title { font-weight: 700; margin-bottom: 2px; }
+  .checklist-item-sub { font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .checklist-item-link { color: var(--accent3); font-size: 11px; text-decoration: none; }
+  .checklist-item-link:hover { text-decoration: underline; }
+
+  /* ── DEVIL'S ADVOCATE ── */
+  .risk-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px; margin-bottom: 10px;
+  }
+  .risk-header { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+  .risk-level {
+    padding: 2px 8px; border-radius: 4px; font-size: 10px;
+    font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+  }
+  .risk-high { background: rgba(255,77,28,.2); color: var(--accent); }
+  .risk-med { background: rgba(255,184,0,.15); color: var(--accent2); }
+  .risk-low { background: rgba(0,255,136,.12); color: var(--green); }
+  .risk-title { font-weight: 700; font-size: 14px; }
+  .risk-body { font-size: 13px; color: var(--muted); line-height: 1.6; }
+  .risk-solution { margin-top: 8px; padding: 8px 12px; background: var(--bg3); border-radius: 6px; font-size: 12px; }
+  .risk-solution strong { color: var(--accent2); }
+
+  /* ── FLIGHTS ── */
+  .flight-card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px; margin-bottom: 12px;
+  }
+  .flight-route { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .flight-airport { font-family: var(--font-display); font-size: 32px; color: var(--text); line-height: 1; }
+  .flight-arrow { flex: 1; display: flex; align-items: center; gap: 8px; }
+  .flight-arrow-line { flex: 1; height: 1px; background: var(--border); position: relative; }
+  .flight-arrow-line::after { content: '▶'; position: absolute; right: -6px; top: -8px; font-size: 10px; color: var(--accent); }
+  .flight-detail-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .flight-detail { background: var(--bg3); border-radius: 6px; padding: 8px; font-size: 12px; }
+  .flight-detail strong { display: block; color: var(--muted); font-size: 10px; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 2px; }
+
+  /* ── GEAR ── */
+  .gear-category { margin-bottom: 20px; }
+  .gear-cat-title {
+    font-family: var(--font-display); font-size: 20px; letter-spacing: 2px;
+    color: var(--accent2); margin-bottom: 10px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .gear-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6px; }
+  @media (max-width: 480px) { .gear-grid { grid-template-columns: 1fr; } }
+  .gear-item {
+    background: var(--bg3); border-radius: 8px; padding: 10px 12px;
+    font-size: 12px; display: flex; gap: 8px; align-items: flex-start;
+  }
+  .gear-emoji { font-size: 16px; flex-shrink: 0; }
+  .gear-text strong { display: block; font-size: 13px; margin-bottom: 1px; }
+  .gear-text span { color: var(--muted); font-size: 11px; }
+
+  /* ── PROGRESS BARS ANIMATION ── */
+  @keyframes growBar { from { width: 0; } to { width: var(--w); } }
+  .animated-bar { animation: growBar .8s ease forwards; }
+
+  /* ── TIMELINE Visual ── */
+  .timeline-visual {
+    display: flex; overflow-x: auto; gap: 0;
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 12px;
+    margin-bottom: 16px; -webkit-overflow-scrolling: touch;
+  }
+  .tl-day {
+    flex-shrink: 0; display: flex; flex-direction: column; align-items: center;
+    gap: 6px; cursor: pointer; padding: 0 6px; transition: opacity .2s;
+  }
+  .tl-day:hover { opacity: .8; }
+  .tl-icon { font-size: 16px; }
+  .tl-num { font-family: var(--font-mono); font-size: 9px; color: var(--muted); }
+  .tl-dot { width: 8px; height: 8px; border-radius: 50%; }
+  .tl-line { width: 100%; height: 2px; background: var(--border); flex: 1; }
+  .tl-connector { width: 20px; height: 2px; background: var(--border); align-self: flex-end; margin-bottom: 3px; }
+  .tl-city { font-size: 8px; color: var(--muted); text-align: center; max-width: 48px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">🚐 RV 2027</div>
+  <div class="nav-links">
+    <button class="nav-btn active" onclick="showSection('cover', this)">כיסוי</button>
+    <button class="nav-btn" onclick="showSection('flights', this)">✈️ טיסות</button>
+    <button class="nav-btn" onclick="showSection('rv', this)">🚐 RV</button>
+    <button class="nav-btn" onclick="showSection('itinerary', this)">📅 לו״ז</button>
+    <button class="nav-btn" onclick="showSection('route', this)">🗺️ מסלול</button>
+    <button class="nav-btn" onclick="showSection('budget', this)">💰 תקציב</button>
+    <button class="nav-btn" onclick="showSection('logistics', this)">📋 לוגיסטיקה</button>
+    <button class="nav-btn" onclick="showSection('gear', this)">🎒 ציוד</button>
+    <button class="nav-btn" onclick="showSection('devil', this)">😈 פרקליט השטן</button>
+  </div>
+</nav>
+
+<!-- COVER -->
+<section id="cover" class="active">
+  <div class="cover-grid"></div>
+  <div class="cover-content">
+    <div class="cover-eyebrow">
+      <span></span>JULY 2027 · NORTHEAST USA<span></span>
+    </div>
+    <div class="cover-title">
+      <span class="highlight">RV</span><br>ROAD<br>TRIP
+    </div>
+    <div class="cover-subtitle">5 GEEKS · 21 DAYS · 1,186 MI</div>
+    <div class="cover-stats">
+      <div class="cover-stat">
+        <div class="cover-stat-num">5</div>
+        <div class="cover-stat-lbl">גברים</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">21</div>
+        <div class="cover-stat-lbl">ימים</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">1,186</div>
+        <div class="cover-stat-lbl">מיילים</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">11</div>
+        <div class="cover-stat-lbl">עצירות</div>
+      </div>
+      <div class="cover-stat">
+        <div class="cover-stat-num">$2K</div>
+        <div class="cover-stat-lbl">לאדם</div>
+      </div>
+    </div>
+    <button class="cover-btn" onclick="showSection('itinerary', document.querySelector('[onclick*=itinerary]'))">
+      → פתח לוח הזמנים
+    </button>
+    <div style="margin-top:16px; display:flex; gap:8px; justify-content:center; flex-wrap:wrap;">
+      <span class="tag tag-red">🏄 אקסטרים</span>
+      <span class="tag tag-blue">🎮 גיק</span>
+      <span class="tag tag-green">🏔️ נוף</span>
+      <span class="tag tag-yellow">25ft Cruise America</span>
+    </div>
+    <div style="margin-top:16px; font-size:11px; color:var(--muted);">
+      TLV (נתב״ג) → EWR (ניוארק) · יולי 2027
+    </div>
+  </div>
+</section>
+
+<!-- FLIGHTS -->
+<section id="flights">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">01 — FLIGHTS</div>
+    <div class="section-title">✈️ טיסות</div>
+    <div class="section-sub">TLV → EWR · טיסה ישירה · אומדן מחירי יולי 2027</div>
+  </div>
+
+  <div class="card card-accent" style="margin-bottom:16px;">
+    <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">⚠️ חלון הזמנה קריטי</div>
+    <div style="font-size:14px;line-height:1.6;">
+      יולי 2027 = עונת שיא מוחלטת. <strong style="color:var(--accent);">הזמינו כרטיסים לפחות 8–10 חודשים מראש</strong> (ספטמבר–אוקטובר 2026) כדי לאבטח מחיר ב-$800–$1,000 לאדם הלוך-חזור. מחיר יכול לקפוץ ל-$1,400+ לקרוב לתאריך.
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">🛫 טיסת הלוך — הגעה</div>
+    <div class="flight-route">
+      <div>
+        <div class="flight-airport">TLV</div>
+        <div style="font-size:11px;color:var(--muted);">נתב״ג · ת״א</div>
+      </div>
+      <div class="flight-arrow">
+        <div class="flight-arrow-line"></div>
+      </div>
+      <div style="text-align:right;">
+        <div class="flight-airport">EWR</div>
+        <div style="font-size:11px;color:var(--muted);">Newark · NJ</div>
+      </div>
+    </div>
+    <div class="flight-detail-grid">
+      <div class="flight-detail"><strong>טיסה ישירה</strong>~11 שעות</div>
+      <div class="flight-detail"><strong>El Al (LY)</strong>787-9 Dreamliner</div>
+      <div class="flight-detail"><strong>מחיר RT</strong><span style="color:var(--green);font-family:var(--font-mono);">$850–$1,100</span></div>
+      <div class="flight-detail"><strong>United (UA)</strong>787-8 / 777</div>
+      <div class="flight-detail"><strong>יציאה מומלצת</strong>לילה (21:00–23:00)</div>
+      <div class="flight-detail"><strong>הגעה</strong>~05:00–07:00 EWR</div>
+    </div>
+    <div style="margin-top:12px;">
+      <a href="https://www.elal.com/en/home/" target="_blank" class="tag tag-blue" style="margin-left:6px;text-decoration:none;">elal.com ↗</a>
+      <a href="https://www.united.com" target="_blank" class="tag tag-blue" style="text-decoration:none;">united.com ↗</a>
+      <a href="https://www.google.com/travel/flights/search?tfs=CBwQAhopEgoyMDI3LTA3LTAxagwIAhIIL20vMDgzNjZyDAgDEggvbS8wMXlrZ0AASAFwAYIBCwj___________8BmAEB&hl=he" target="_blank" class="tag tag-green" style="text-decoration:none;">Google Flights ↗</a>
+    </div>
+  </div>
+
+  <div class="flight-card">
+    <div style="font-size:12px;color:var(--muted);margin-bottom:12px;text-transform:uppercase;letter-spacing:1px;">🛬 טיסת חזור — בסוף יום 21</div>
+    <div class="flight-route">
+      <div>
+        <div class="flight-airport">EWR</div>
+        <div style="font-size:11px;color:var(--muted);">Newark · NJ</div>
+      </div>
+      <div class="flight-arrow">
+        <div class="flight-arrow-line"></div>
+      </div>
+      <div style="text-align:right;">
+        <div class="flight-airport">TLV</div>
+        <div style="font-size:11px;color:var(--muted);">נתב״ג · ת״א</div>
+      </div>
+    </div>
+    <div class="card" style="background:var(--bg3);font-size:13px;padding:12px;margin-top:8px;line-height:1.6;">
+      ⚠️ <strong>סיכון לוגיסטי קריטי:</strong> יום 21 כולל החזרת RV ב-09:00 לאדיסון NJ → נסיעה ל-EWR (~20 דקות). <span style="color:var(--accent2);">המלצה: טיסת חזור לא לפני 14:00.</span> אם יש עיכוב בהחזרה — יש מרווח ביטחון.
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-yellow">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">💡 טיפ לחיסכון</div>
+      <div style="font-size:13px;line-height:1.6;">
+        קנו כרטיסים ב<strong>יום חמישי</strong> — הנתונים ההיסטוריים מראים מחירים נמוכים יותר. El Al EWR = Terminal B (קרוב לאוטובוס EWR-Edison). לא כדאי JFK לטיול זה — Uber מ-JFK לאדיסון = $70, מ-EWR = $15.
+      </div>
+    </div>
+    <div class="card card-green">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">💰 אומדן עלות טיסה</div>
+      <div class="stat-num" style="font-size:36px;">$900</div>
+      <div style="font-size:12px;color:var(--muted);">ממוצע לאדם הלוך-חזור (אומדן יולי 2027)</div>
+      <div style="font-size:11px;color:var(--accent2);margin-top:6px;">$4,500 לקבוצה של 5 · +5% מס שדה</div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- RV SECTION -->
+<section id="rv">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">02 — RV</div>
+    <div class="section-title">🚐 הקרוואן</div>
+    <div class="section-sub">Cruise America Standard 25ft · Class C · Edison, NJ</div>
+  </div>
+
+  <div class="card" style="background: linear-gradient(135deg, rgba(255,77,28,.08), transparent); border-color: rgba(255,77,28,.3); margin-bottom:16px;">
+    <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap;">
+      <div style="font-size:60px;">🚐</div>
+      <div style="flex:1;">
+        <div style="font-family:var(--font-display);font-size:28px;letter-spacing:2px;">STANDARD C-25</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:4px;">Cruise America · Class C · ~25 רגל · גובה 11'6"</div>
+        <div class="badge-row" style="margin-top:8px;">
+          <span class="tag tag-green">Full Hookup בכל לינה</span>
+          <span class="tag tag-yellow">100 מייל/יום כלול</span>
+          <span class="tag tag-blue">5 מושבי נסיעה</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <div class="card card-accent">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">📍 איפור מיטות</div>
+      <div class="checklist-item" style="border:none;padding:6px 0;">
+        <div class="check-icon">🛏️</div>
+        <div><strong>Cab-Over (מעל הנהג)</strong><div style="font-size:11px;color:var(--muted);">מיטה זוגית קבועה — 2 אנשים</div></div>
+      </div>
+      <div class="checklist-item" style="border:none;padding:6px 0;">
+        <div class="check-icon">🛋️</div>
+        <div><strong>Dinette — מקופל (1 אדם)</strong><div style="font-size:11px;color:var(--muted);">8 דקות קיפול/פריסה · כל יום</div></div>
+      </div>
+      <div class="checklist-item" style="border:none;padding:6px 0;">
+        <div class="check-icon">🛌</div>
+        <div><strong>ספה + Dinette</strong><div style="font-size:11px;color:var(--muted);">2 אנשים נוספים</div></div>
+      </div>
+    </div>
+    <div class="card card-green">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🔧 מפרטים</div>
+      <div class="budget-row" style="padding:6px 0;">
+        <span style="font-size:13px;">אורך</span><span class="tag tag-green">25ft / 7.6m</span>
+      </div>
+      <div class="budget-row" style="padding:6px 0;">
+        <span style="font-size:13px;">גובה</span><span class="tag tag-green">11'6" / 3.5m</span>
+      </div>
+      <div class="budget-row" style="padding:6px 0;">
+        <span style="font-size:13px;">צריכת דלק</span><span class="tag tag-green">8–10 MPG</span>
+      </div>
+      <div class="budget-row" style="padding:6px 0;">
+        <span style="font-size:13px;">Black Water</span><span class="tag tag-yellow">~24–30 גלון</span>
+      </div>
+      <div class="budget-row" style="border:none;padding:6px 0;">
+        <span style="font-size:13px;">Gray Water</span><span class="tag tag-yellow">~30 גלון</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;">
+    <div style="font-family:var(--font-display);font-size:20px;letter-spacing:2px;margin-bottom:12px;">📦 CRUISE AMERICA — דיפו אדיסון</div>
+    <div class="checklist-item">
+      <div class="check-icon">📍</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">1001 US-1, Edison, NJ 08817</div>
+        <div class="checklist-item-sub">25 מייל מ-Manhattan · 20 דקות מ-EWR</div>
+        <a href="https://www.cruiseamerica.com" target="_blank" class="checklist-item-link">cruiseamerica.com ↗</a>
+      </div>
+      <div style="font-family:var(--font-mono);color:var(--accent3);font-size:12px;">732-985-4040</div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">⏰</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">שעות איסוף: 08:00–16:00</div>
+        <div class="checklist-item-sub">הזמנה 6–12 חודשים מראש · יולי = עונת שיא</div>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">🚨</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">חירום בדרכים</div>
+        <div class="checklist-item-sub">Cruise America Travelers Assistance</div>
+        <a href="tel:18003344110" class="checklist-item-link">1-800-334-4110</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="card card-yellow" style="margin-top:16px;">
+    <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">💰 עלות השכרה</div>
+    <div class="budget-row">
+      <span>בסיס לילה (יולי שיא)</span>
+      <div><div class="budget-amount">$175–$220</div><div class="budget-per">ללילה</div></div>
+    </div>
+    <div class="budget-row">
+      <span>21 לילות (midrange)</span>
+      <div><div class="budget-amount">~$4,095</div><div class="budget-per">@$195 avg</div></div>
+    </div>
+    <div class="budget-row">
+      <span>Prep Fee</span>
+      <div><div class="budget-amount">$75–$100</div><div class="budget-per">חד-פעמי</div></div>
+    </div>
+    <div class="budget-row">
+      <span>ביטוח Standard ($39/יום)</span>
+      <div><div class="budget-amount">$819</div><div class="budget-per">21 יום</div></div>
+    </div>
+    <div class="budget-row" style="border:none;">
+      <span>מיילאז' (1,186 mi ≤ 2,100 כלול)</span>
+      <div><div class="budget-amount" style="color:var(--green);">$0 נוסף</div><div class="budget-per">⚠ עקוב במד</div></div>
+    </div>
+  </div>
+
+  <div class="card card-blue" style="margin-top:16px;">
+    <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🚫 ZERO PARKWAYS RULE — חוק ברזל</div>
+    <div style="font-size:13px;line-height:1.7;">
+      ❌ Garden State Pkwy — לא מתאים לנתיב הנוכחי<br>
+      ❌ Taconic State Pkwy — גובה 8ft בלבד<br>
+      ❌ Palisades Pkwy — גובה 8ft בלבד<br>
+      ✅ I-87 (Adirondack Northway) — בטוח ל-12ft<br>
+      ✅ I-90 (NY Thruway) — בטוח ל-12ft<br>
+      ✅ I-78 / I-95 / I-287 — כל הנתיבים הבטוחים
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">03 — ITINERARY</div>
+    <div class="section-title">📅 לו״ז יומי</div>
+    <div class="section-sub">21 ימים · 3 שבועות · הלוך ושוב מאדיסון NJ</div>
+  </div>
+
+  <!-- TIMELINE VISUAL -->
+  <div class="timeline-visual">
+    <div class="tl-day" onclick="openDay(1)"><div class="tl-icon">✈️</div><div class="tl-num">01</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-city">Edison→JC</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(2)"><div class="tl-icon">🕹️</div><div class="tl-num">02</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">Jersey City</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(3)"><div class="tl-icon">🎮</div><div class="tl-num">03</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">NYC</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(4)"><div class="tl-icon">🚐</div><div class="tl-num">04</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Jackson NJ</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(5)"><div class="tl-icon">🎢</div><div class="tl-num">05</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-city">Six Flags</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(6)"><div class="tl-icon">🕹️</div><div class="tl-num">06</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">Asbury Pk</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(7)"><div class="tl-icon">🚐</div><div class="tl-num">07</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Hudson Val.</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(8)"><div class="tl-icon">🚐</div><div class="tl-num">08</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Adirondack</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(9)"><div class="tl-icon">🌊</div><div class="tl-num">09</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-city">Rafting</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(10)"><div class="tl-icon">🧗</div><div class="tl-num">10</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-city">Lake George</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(11)"><div class="tl-icon">🚐</div><div class="tl-num">11</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Lake Placid</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(12)"><div class="tl-icon">🏔️</div><div class="tl-num">12</div><div class="tl-dot" style="background:var(--green)"></div><div class="tl-city">Whiteface</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(13)"><div class="tl-icon">🚐</div><div class="tl-num">13</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Oneida</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(14)"><div class="tl-icon">🚐</div><div class="tl-num">14</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Niagara</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(15)"><div class="tl-icon">⚡</div><div class="tl-num">15</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">Niagara</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(16)"><div class="tl-icon">🚐</div><div class="tl-num">16</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Finger Lks</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(17)"><div class="tl-icon">🌿</div><div class="tl-num">17</div><div class="tl-dot" style="background:var(--green)"></div><div class="tl-city">Watkins Gl.</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(18)"><div class="tl-icon">🚐</div><div class="tl-num">18</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Catskills</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(19)"><div class="tl-icon">🌲</div><div class="tl-num">19</div><div class="tl-dot" style="background:var(--green)"></div><div class="tl-city">Kaaterskill</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(20)"><div class="tl-icon">🚐</div><div class="tl-num">20</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Jersey City</div></div>
+    <div class="tl-connector"></div>
+    <div class="tl-day" onclick="openDay(21)"><div class="tl-icon">🏁</div><div class="tl-num">21</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-city">החזרה</div></div>
+  </div>
+
+  <!-- WEEK TABS -->
+  <div class="week-tabs">
+    <button class="week-tab active" onclick="showWeek('w1', this)">🎮 שבוע 1: NYC + Six Flags</button>
+    <button class="week-tab" onclick="showWeek('w2', this)">🌊 שבוע 2: Adirondacks + ניאגרה</button>
+    <button class="week-tab" onclick="showWeek('w3', this)">🍷 שבוע 3: Finger Lakes + חזרה</button>
+  </div>
+
+  <!-- WEEK 1 -->
+  <div id="w1" class="week-content active">
+
+    <div class="day-card" id="day-1">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">01</div>
+        <div class="day-title-block">
+          <div class="day-title">✈️ נחיתה + איסוף 25ft + כניסה לבסיס</div>
+          <div class="day-meta">Edison NJ → Liberty Harbor, Jersey City · 25 mi</div>
+          <div class="day-tags"><span class="tag tag-red">ג'ט-לאג</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Liberty Harbor RV Park · 11 Marin Blvd, Jersey City NJ 07302</div>
+          <div class="day-info-item"><strong>מחיר לינה</strong>$100–110 / לילה</div>
+          <div class="day-info-item"><strong>טל׳</strong>(201) 736-3200</div>
+        </div>
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>⚠️ חוק ברזל</strong>לא יוצאים לאחר הגעה! נוהג + נח. Walmart Run ב-Uber בלבד.</div>
+          <div class="day-info-item"><strong>נסיעה</strong>Edison → Liberty Harbor · I-95N/NJ-1 · 25 מייל · 40 דקות</div>
+        </div>
+        <div class="attraction-row">
+          <h4>🛒 רשימת קניות ראשוניות בוולמארט</h4>
+          <div class="attraction-item"><span class="attraction-name">💧 גלוני מים (4 שישיות)</span><span class="attraction-price">~$20</span></div>
+          <div class="attraction-item"><span class="attraction-name">🧻 נ.ט. RV-Safe (2 חבילות)</span><span class="attraction-price">~$18</span></div>
+          <div class="attraction-item"><span class="attraction-name">☕ קפה + מזון ראשוני</span><span class="attraction-price">~$60</span></div>
+          <div class="attraction-item"><span class="attraction-name">🧹 ציוד ניקוי + כוסות נייר</span><span class="attraction-price">~$25</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">02</div>
+        <div class="day-title-block">
+          <div class="day-title">🕹️ Tenafly + Barcade Brooklyn</div>
+          <div class="day-meta">Liberty Harbor (בסיס RV) · 0 mi נסיעת RV · Uber בלבד</div>
+          <div class="day-tags"><span class="tag tag-blue">גיקי</span><span class="tag tag-red">ריקון BW ✅</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות יום 2</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🏘️ Tenafly NJ + Fort Lee Historic Park</span>
+            <span class="attraction-price">חינם</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🕹️ Barcade Brooklyn — 200+ מכונות ארקייד</span>
+            <div style="text-align:right;"><span class="attraction-price">$0 כניסה + מכונות</span><br><a href="https://barcadebarnyc.com" target="_blank" class="attraction-link">barcadebarnyc.com ↗</a></div>
+          </div>
+        </div>
+        <div class="card" style="background:rgba(255,77,28,.08);border-color:rgba(255,77,28,.3);margin-top:10px;font-size:12px;padding:10px;">
+          ⚫ <strong>ריקון BW + Gray Water</strong> — Day 2 = 48 שעות. Gray Water (~30 גלון מקלחות) קרוב לקצה. ריקון בחיבור Sewer ב-Liberty Harbor לפני שינה.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">03</div>
+        <div class="day-title-block">
+          <div class="day-title">🎮 Nintendo NY + Midtown Comics + DUMBO</div>
+          <div class="day-meta">Liberty Harbor בסיס · תחבורה ציבורית בלבד · OMNY Card</div>
+          <div class="day-tags"><span class="tag tag-blue">גיקי NYC</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות יום 3</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🍄 Nintendo New York — 10 Rockefeller Plaza</span>
+            <div style="text-align:right;"><span class="attraction-price">חינם</span><br><a href="https://nintendony.com" target="_blank" class="attraction-link">nintendony.com ↗</a></div>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">📚 Midtown Comics — 459 Lexington Ave (הגדולה בעולם)</span>
+            <div style="text-align:right;"><span class="attraction-price">קניות לפי רצון</span><br><a href="https://www.midtowncomics.com" target="_blank" class="attraction-link">midtowncomics.com ↗</a></div>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">📸 DUMBO Brooklyn — Brooklyn Bridge Park</span>
+            <span class="attraction-price">חינם</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🚇 OMNY Card × 5 (שבועי $34 כ"א)</span>
+            <span class="attraction-price">$170 לקבוצה</span>
+          </div>
+        </div>
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>מסלול תחבורה</strong>Light Rail → PATH → WTC → A/C → 50th (Nintendo) → 6 → Grand Central (Comics) → F → York St (DUMBO)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">04</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 נסיעה — Jackson NJ (Six Flags Area)</div>
+          <div class="day-meta">Liberty Harbor → Butterfly Camping · I-287S [לא GSP!] · 65 mi</div>
+          <div class="day-tags"><span class="tag tag-red">ריקון BW ✅</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Butterfly Camping Resort · 360 Butterfly Rd, Jackson NJ</div>
+          <div class="day-info-item"><strong>מחיר</strong>$60–80 / לילה</div>
+          <div class="day-info-item"><strong>נסיעה</strong>I-78E → I-287S → Route 9S → Jackson · 1.5 שעות</div>
+        </div>
+        <div class="card" style="background:rgba(0,229,255,.06);border-color:rgba(0,229,255,.2);margin-top:10px;font-size:12px;padding:10px;">
+          🎢 <strong>קנה כרטיסי Six Flags אונליין לפני!</strong> Thrill & Splash Combo = ~$60–70/אדם online לעומת $90–110 בקופה. חיסכון ~$150 לקבוצה.
+          <a href="https://www.sixflags.com/greatadventure" target="_blank" class="attraction-link" style="display:block;margin-top:4px;">sixflags.com/greatadventure ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">05</div>
+        <div class="day-title-block">
+          <div class="day-title">🎢 Six Flags Great Adventure + Hurricane Harbor</div>
+          <div class="day-meta">Butterfly Camping → Six Flags · 5 mi</div>
+          <div class="day-tags"><span class="tag tag-red">אקסטרים</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>🎢 אטרקציות מרכזיות</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">⚡ Kingda Ka — 456ft גבוהה בעולם (90mph / 3.5 שניות)</span>
+            <div style="text-align:right;"><span class="attraction-price">כלול בכרטיס</span></div>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🪵 El Toro — עץ, Top-5 בעולם</span>
+            <span class="attraction-price">כלול</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">💦 Hurricane Harbor — Tornado Slide, Wave Pool</span>
+            <span class="attraction-price">כלול ב-Combo</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🅿️ חניית RV (Oversized)</span>
+            <span class="attraction-price">$35–45</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">⚡ Flash Pass ל-5 אנשים (מומלץ ביולי)</span>
+            <span class="attraction-price">~$50–75/אדם</span>
+          </div>
+        </div>
+        <div class="card" style="background:rgba(0,255,136,.06);border-color:rgba(0,255,136,.2);margin-top:10px;font-size:12px;padding:10px;">
+          💡 <strong>טיפ חיסכון:</strong> קחו כריכות מהקרוואן לצהריים בחניה. חיסכון $60–80 לעומת מסעדות בפארק.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">06</div>
+        <div class="day-title-block">
+          <div class="day-title">🕹️ Silverball Museum — Asbury Park</div>
+          <div class="day-meta">Jackson → Asbury Park → Tip Tam Camping · 95 mi</div>
+          <div class="day-tags"><span class="tag tag-blue">גיקי</span><span class="tag tag-red">ריקון BW ✅</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות יום 6</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🎰 Silverball Retro Museum — 600+ מכונות 1950–1990</span>
+            <div style="text-align:right;"><span class="attraction-price">~$12 כניסה</span><br><a href="https://www.silverballmuseum.com" target="_blank" class="attraction-link">silverballmuseum.com ↗</a></div>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🌊 Asbury Park Boardwalk + Ocean Ave</span>
+            <span class="attraction-price">חינם</span>
+          </div>
+        </div>
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Tip Tam Camping · 68 Tip Tam Rd, Washington Township NJ</div>
+          <div class="day-info-item"><strong>מחיר</strong>$65–75 / לילה · (908) 689-4145</div>
+        </div>
+        <div class="card" style="background:rgba(255,77,28,.06);border-color:rgba(255,77,28,.2);margin-top:10px;font-size:12px;padding:10px;">
+          🚫 <strong>מסלול נסיעה:</strong> Route 35N → Route 9N → I-195W → I-287N → I-78W → Route 46W → Route 57N. מסלול זה עובר דרך מערב NJ בלבד — Palisades Pkwy לא רלוונטי למסלול זה.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">07</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 עמק ה-Hudson — Saugerties NY</div>
+          <div class="day-meta">Tip Tam → I-78E → I-287N → I-87N → Saugerties · 110 mi</div>
+          <div class="day-tags"><span class="tag tag-green">נוף</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Rip Van Winkle Campground · 149 Blue Mountain Rd, Saugerties NY</div>
+          <div class="day-info-item"><strong>מחיר</strong>$55–75 / לילה · (845) 246-8334</div>
+        </div>
+        <div class="attraction-row">
+          <h4>📍 בדרך / בערב</h4>
+          <div class="attraction-item"><span class="attraction-name">🏠 Saugerties Lighthouse (Uber 2 mi)</span><span class="attraction-price">חינם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🎸 Woodstock Preview (8 mi)</span><span class="attraction-price">חינם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🛣️ Thruway Toll I-87</span><span class="attraction-price">~$6–8</span></div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /w1 -->
+
+  <!-- WEEK 2 -->
+  <div id="w2" class="week-content">
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">08</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 Adirondacks — Lake Luzerne (בסיס רפטינג)</div>
+          <div class="day-meta">Saugerties → I-87N → Lake Luzerne · 100 mi</div>
+          <div class="day-tags"><span class="tag tag-red">ריקון BW ✅</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Arrowhead Marina & RV Park · Lake Luzerne NY</div>
+          <div class="day-info-item"><strong>מחיר</strong>$55–75 / לילה · (518) 696-2253</div>
+        </div>
+        <div class="attraction-row">
+          <h4>📞 הזמן רפטינג למחר!</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🌊 Hudson River Rafting Co — North Creek NY</span>
+            <div style="text-align:right;"><span class="attraction-price">$65–90/אדם</span><br><a href="https://www.hudsonriverrafting.com" target="_blank" class="attraction-link">hudsonriverrafting.com ↗</a></div>
+          </div>
+          <div class="attraction-item"><span class="attraction-name">קבוצה של 5 · Full Day Class III–IV</span><span class="attraction-price">~$325–450</span></div>
+          <div class="attraction-item"><span class="attraction-name">📞 1-800-888-7238</span><span class="attraction-price">יציאה 08:30</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">09</div>
+        <div class="day-title-block">
+          <div class="day-title">🌊 Whitewater Rafting — Upper Hudson (Class III–IV)</div>
+          <div class="day-meta">North Creek NY + ערב Saratoga Springs · 35 mi</div>
+          <div class="day-tags"><span class="tag tag-red">אקסטרים</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 תוכנית יום</h4>
+          <div class="attraction-item"><span class="attraction-name">🏄 Rafting Upper Hudson · Class III rapids ביולי</span><span class="attraction-price">$325–450 לקבוצה</span></div>
+          <div class="attraction-item"><span class="attraction-name">🐎 Saratoga Race Course (עונת מירוצים!)</span><span class="attraction-price">$5+ כניסה</span></div>
+          <div class="attraction-item"><span class="attraction-name">🍺 Phila Street Restaurants + Caroline St Bars</span><span class="attraction-price">לפי רצון</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">10</div>
+        <div class="day-title-block">
+          <div class="day-title">🧗 Lake George — Adirondack Extreme</div>
+          <div class="day-meta">Lake Luzerne → I-87N → Lake George · 30 mi</div>
+          <div class="day-tags"><span class="tag tag-red">אקסטרים</span><span class="tag tag-red">ריקון BW ✅</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🌲 Adirondack Extreme — 7 רמות קושי, זיפליין, גשרים</span>
+            <div style="text-align:right;"><span class="attraction-price">$50–80/אדם</span><br><a href="https://www.adirondackextreme.com" target="_blank" class="attraction-link">adirondackextreme.com ↗</a></div>
+          </div>
+          <div class="attraction-item"><span class="attraction-name">🏖️ Million Dollar Beach — שחייה ערב</span><span class="attraction-price">חינם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🍖 Barnsider Smokehouse — BBQ</span><span class="attraction-price">~$20–30/אדם</span></div>
+        </div>
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Lake George RV Park · 74 Rte 149, Lake George NY · (518) 792-3775</div>
+          <div class="day-info-item"><strong>מחיר</strong>$75–110 / לילה · Full Hookup עד 60ft</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">11</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 Lake Placid / Wilmington KOA</div>
+          <div class="day-meta">Lake George → I-87N → Route 9 → Route 86 · 60 mi</div>
+          <div class="day-tags"><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Lake Placid KOA · 77 Fox Farm Rd, Wilmington NY · (518) 946-7878</div>
+          <div class="day-info-item"><strong>מחיר</strong>$70–100 / לילה</div>
+        </div>
+        <div class="card" style="background:rgba(255,184,0,.08);border-color:rgba(255,184,0,.3);margin-top:10px;font-size:12px;padding:10px;">
+          ⚠️ <strong>Route 86 דרך Wilmington Notch:</strong> כביש הרים צר, 1 נתיב לכיוון, עקלקלות. 25ft עובר בנוחות יחסית — שמור ריכוז בפניות. <strong>נסיעה ביום בלבד!</strong>
+        </div>
+        <div class="attraction-row">
+          <h4>📍 אחה״צ</h4>
+          <div class="attraction-item"><span class="attraction-name">🌊 High Falls Gorge — מפלים 700ft ב-AuSable</span><span class="attraction-price">~$16/אדם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🍺 Mirror Lake Brew Pub + Lake Placid Village</span><span class="attraction-price">לפי רצון</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">12</div>
+        <div class="day-title-block">
+          <div class="day-title">🏔️ Whiteface Mountain + Olympic Museum</div>
+          <div class="day-meta">KOA Wilmington (בסיס) · 25 mi</div>
+          <div class="day-tags"><span class="tag tag-green">נוף</span><span class="tag tag-red">ריקון BW ✅</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות</h4>
+          <div class="attraction-item"><span class="attraction-name">🏔️ Whiteface Summit Hwy — 4,867ft, תצפית 360°</span><span class="attraction-price">$30/רכב</span></div>
+          <div class="attraction-item"><span class="attraction-name">🏅 Olympic Jumping Complex</span><span class="attraction-price">~$15</span></div>
+          <div class="attraction-item"><span class="attraction-name">🏒 "Miracle on Ice" Olympic Museum</span><span class="attraction-price">~$17</span></div>
+          <div class="attraction-item"><span class="attraction-name">🚣 Mirror Lake Kayak/SUP Rentals</span><span class="attraction-price">~$20/שעה</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">13</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 מסע מערב — Oneida Lake</div>
+          <div class="day-meta">Wilmington → Route 86W → I-87S → I-90W → Exit 34 · 130 mi</div>
+          <div class="day-tags"><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Verona Beach Campground · Oneida Lake NY · $55–70 / לילה</div>
+          <div class="day-info-item"><strong>Toll</strong>NY Thruway I-90 ~$8</div>
+        </div>
+        <div class="card" style="background:rgba(0,229,255,.06);border-color:rgba(0,229,255,.2);margin-top:10px;font-size:12px;padding:10px;">
+          🧠 <strong>תחנת ביניים אסטרטגית:</strong> Lake Placid → Niagara ישיר = 240 mi (מעל המגבלה). Verona Beach = פיצול מושלם: 130 + 145 = 275 mi בשני ימים.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">14</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 Niagara Falls — KOA Grand Island</div>
+          <div class="day-meta">Verona Beach → I-90W → I-290W → I-190N → Grand Island · 145 mi</div>
+          <div class="day-tags"><span class="tag tag-red">ריקון BW ✅</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Niagara Falls KOA · 2570 Grand Island Blvd, Grand Island NY · (716) 773-7583</div>
+          <div class="day-info-item"><strong>מחיר</strong>$75–105 / לילה · Pull-through עד 70ft</div>
+          <div class="day-info-item"><strong>Toll</strong>Thruway ~$10</div>
+        </div>
+        <div class="attraction-row">
+          <h4>📍 אחה״צ — תצפית ראשונה</h4>
+          <div class="attraction-item"><span class="attraction-name">👀 Prospect Point — תצפית American Falls</span><span class="attraction-price">חינם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🌿 Goat Island Promenade</span><span class="attraction-price">חינם</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">15</div>
+        <div class="day-title-block">
+          <div class="day-title">⚡ Niagara Power Vista + American Falls + צד קנדי</div>
+          <div class="day-meta">KOA Grand Island (בסיס) · 10 mi</div>
+          <div class="day-tags"><span class="tag tag-blue">גיקי</span><span class="tag tag-green">נוף מדהים</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">⚡ Niagara Power Vista — טסלה, AC/DC, טורבינות</span>
+            <div style="text-align:right;"><span class="attraction-price">חינם!</span><br><a href="https://www.nypa.gov/niagara" target="_blank" class="attraction-link">nypa.gov/niagara ↗</a></div>
+          </div>
+          <div class="attraction-item"><span class="attraction-name">🚢 Maid of the Mist — ספינה לתוך Horseshoe Falls</span><span class="attraction-price">~$21/אדם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🌬️ Cave of the Winds — מתחת ל-Bridal Veil</span><span class="attraction-price">~$25/אדם</span></div>
+        </div>
+        <div class="card" style="background:rgba(0,229,255,.08);border-color:rgba(0,229,255,.3);margin-top:10px;font-size:12px;padding:10px;">
+          🇨🇦 <strong>צד קנדי — פרוטוקול מומלץ:</strong> ⛔ אין לעבור עם הקרוואן! תורי גבול ביולי = 30–60 דקות. ✅ החנה ב-KOA, חצו ברגל דרך Rainbow Bridge (~20 דקות) ← <strong>דרכון חובה!</strong><br>
+          Table Rock + Journey Behind the Falls = $22 CAD/אדם. חציית גשר ברגל = ~$1/אדם.
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /w2 -->
+
+  <!-- WEEK 3 -->
+  <div id="w3" class="week-content">
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">16</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 Watkins Glen — Finger Lakes</div>
+          <div class="day-meta">Niagara → I-190S → I-90E → Route 14S · 120 mi</div>
+          <div class="day-tags"><span class="tag tag-red">ריקון BW ✅</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Watkins Glen KOA · Watkins Glen NY · (607) 535-7404</div>
+          <div class="day-info-item"><strong>מחיר</strong>$65–90 / לילה · 1 mi מהפארק</div>
+        </div>
+        <div class="attraction-row">
+          <h4>📍 אחה״צ</h4>
+          <div class="attraction-item"><span class="attraction-name">⛵ Seneca Belle Cruise — שייט Seneca Lake</span><span class="attraction-price">~$20/אדם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🍺 Seneca Lake Wine Trail + Craft Breweries</span><span class="attraction-price">לפי רצון</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">17</div>
+        <div class="day-title-block">
+          <div class="day-title">🌿 Watkins Glen Gorge — 19 מפלים</div>
+          <div class="day-meta">KOA Watkins Glen (בסיס) · 10 mi</div>
+          <div class="day-tags"><span class="tag tag-green">טבע</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🌊 Watkins Glen State Park Gorge Trail — 1.5 mi, 19 מפלים, מנהרות</span>
+            <div style="text-align:right;"><span class="attraction-price">$10/אדם</span><br><a href="https://parks.ny.gov/parks/watkinsglen" target="_blank" class="attraction-link">parks.ny.gov ↗</a></div>
+          </div>
+          <div class="attraction-item"><span class="attraction-name">⏰ הגע 08:00! עומס קיצוני ביולי. Rainbow Falls = 60ft</span><span class="attraction-price">2 שעות</span></div>
+          <div class="attraction-item"><span class="attraction-name">🥃 Two Goats Brewing (Hector NY, 15 mi)</span><span class="attraction-price">Tasting לפי רצון</span></div>
+        </div>
+        <div class="card" style="background:rgba(255,184,0,.06);border-color:rgba(255,184,0,.2);margin-top:10px;font-size:12px;padding:10px;">
+          🛢️ <strong>הכנה ל-Catskills:</strong> ריקון Gray + מילוי מים. תדלוק ב-Watkins Glen. מחר: 120 mi via Route 14N → I-88E → I-87S → Route 17.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">18</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 Catskills — Woodridge / Sullivan County</div>
+          <div class="day-meta">Watkins Glen → I-86E → Route 17 → Woodridge · 120 mi</div>
+          <div class="day-tags"><span class="tag tag-red">ריקון BW ✅</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Catskill Mountain KOA · Woodridge NY (Sullivan County)</div>
+          <div class="day-info-item"><strong>מחיר</strong>$65–85 / לילה</div>
+        </div>
+        <div class="attraction-row">
+          <h4>📍 בדרך / ערב</h4>
+          <div class="attraction-item"><span class="attraction-name">🎰 Resorts World Catskills (קזינו!) — 10 mi</span><span class="attraction-price">חינם כניסה</span></div>
+          <div class="attraction-item"><span class="attraction-name">🥃 Catskill Distilling Company — Whiskey Tour</span><span class="attraction-price">~$15/אדם</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">19</div>
+        <div class="day-title-block">
+          <div class="day-title">🌲 Kaaterskill Falls + Woodstock NY</div>
+          <div class="day-meta">Catskill Mountain KOA (בסיס) · 25 mi</div>
+          <div class="day-tags"><span class="tag tag-green">טבע + תרבות</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="attraction-row">
+          <h4>📍 אטרקציות</h4>
+          <div class="attraction-item"><span class="attraction-name">🌊 Kaaterskill Falls — 260ft, גבוה ביותר ב-NY · Trail 2 mi</span><span class="attraction-price">חינם</span></div>
+          <div class="attraction-item"><span class="attraction-name">⏰ חנה Laurel House Rd Trailhead מוקדם! Main Lot = מלא ב-08:00</span><span class="attraction-price">—</span></div>
+          <div class="attraction-item"><span class="attraction-name">🎸 Woodstock NY — Tinker St, גלריות, חנויות אינדי</span><span class="attraction-price">חינם</span></div>
+          <div class="attraction-item"><span class="attraction-name">🍽️ Oriole 9 — ארוחת צהריים בWoodstock</span><span class="attraction-price">~$15–20/אדם</span></div>
+        </div>
+        <div class="card" style="background:rgba(255,77,28,.06);border-color:rgba(255,77,28,.2);margin-top:10px;font-size:12px;padding:10px;">
+          ⛔ <strong>לא להכניס RV לWoodstock!</strong> חנה על Route 375/212 בחוץ + Uber 10 דקות. ערב: מיון ציוד לטיסה. יציאה מחר 08:30 ל-Liberty Harbor.
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">20</div>
+        <div class="day-title-block">
+          <div class="day-title">🚐 חזרה ל-NJ — Liberty Harbor · לילה אחרון NYC</div>
+          <div class="day-meta">Catskills → Route 17E → I-87S → I-287E → I-95 → Liberty Harbor · 105 mi</div>
+          <div class="day-tags"><span class="tag tag-red">ריקון BW סופי ✅</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="day-info-row">
+          <div class="day-info-item"><strong>לינה</strong>Liberty Harbor RV Park · Jersey City</div>
+          <div class="day-info-item"><strong>ריקון</strong>Black + Gray — מלא. ניקוי פנים + צילום timestamp.</div>
+        </div>
+        <div class="attraction-row">
+          <h4>📍 ערב NYC אחרון</h4>
+          <div class="attraction-item"><span class="attraction-name">🎮 Barcade / Jersey City Bars + נוף מנהטן</span><span class="attraction-price">לפי רצון</span></div>
+          <div class="attraction-item"><span class="attraction-name">⏰ חזרה לפני 01:00 — מחר יציאה 08:00 לאדיסון!</span><span class="attraction-price">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="day-card">
+      <div class="day-header" onclick="toggleDay(this)">
+        <div class="day-num">21</div>
+        <div class="day-title-block">
+          <div class="day-title">🏁 החזרת RV + טיסה — פרוטוקול סיום</div>
+          <div class="day-meta">Liberty Harbor → Cruise America Edison NJ · 25 mi</div>
+          <div class="day-tags"><span class="tag tag-red">יציאה 08:00 קשיחה!</span></div>
+        </div>
+        <div class="day-arrow">▾</div>
+      </div>
+      <div class="day-body">
+        <div class="checklist-item">
+          <div class="check-icon">1️⃣</div>
+          <div><strong>08:00 יציאה קשיחה</strong> — נהג מפוקס, אין עצירות</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon">2️⃣</div>
+          <div><strong>09:00 הגעה Edison</strong> — Dump Station + ריקון fresh water</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon">3️⃣</div>
+          <div><strong>ניקוי מטבח + אסלה</strong> — הכנה לפגישה עם נציג</div>
+        </div>
+        <div class="checklist-item">
+          <div class="check-icon">4️⃣</div>
+          <div><strong>צלם הכל</strong> — פנים + חוץ עם timestamp. קבל קבלה.</div>
+        </div>
+        <div class="checklist-item" style="border:none;">
+          <div class="check-icon">5️⃣</div>
+          <div>
+            <strong>EWR (Newark): Uber 15 דקות, ~$15–20</strong>
+            <div style="font-size:11px;color:var(--muted);">קנס איחור: $50/שעה! פיקדון $300 מוחזר 7–10 ימים.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /w3 -->
+</div>
+</section>
+
+<!-- ROUTE MAP -->
+<section id="route">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">04 — ROUTE</div>
+    <div class="section-title">🗺️ מסלול ועצירות</div>
+    <div class="section-sub">11 עצירות · 1,186 מייל בין-חניוני · ~1,500–1,700 כולל טיולי יום</div>
+  </div>
+
+  <div class="card" style="margin-bottom:16px;padding:16px;">
+    <div style="font-family:var(--font-mono);font-size:11px;color:var(--muted);letter-spacing:2px;margin-bottom:12px;">ROUTE LEGEND</div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;font-size:12px;">
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:var(--accent);display:inline-block;border:2px solid var(--accent);"></span>בסיס / עיר</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:rgba(0,255,136,.2);display:inline-block;border:2px solid var(--green);"></span>חניון / קמפינג</span>
+      <span style="display:flex;align-items:center;gap:6px;"><span style="width:12px;height:12px;border-radius:50%;background:rgba(0,229,255,.15);display:inline-block;border:2px solid var(--accent3);"></span>אטרקציה ראשית</span>
+    </div>
+  </div>
+
+  <div class="route-stops">
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-base">A</div>
+      <div class="stop-info">
+        <div class="stop-name">🛬 Edison NJ — Cruise America Depot</div>
+        <div class="stop-sub">1001 US-1, Edison NJ · יום 1 איסוף / יום 21 החזרה</div>
+        <div class="stop-details">
+          <span class="stop-detail">📍 25 mi מ-Manhattan</span>
+          <span class="stop-detail">⏰ 08:00–16:00</span>
+          <span class="stop-detail">📞 732-985-4040</span>
+        </div>
+      </div>
+      <div class="stop-price">BASE</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">1</div>
+      <div class="stop-info">
+        <div class="stop-name">🌆 Liberty Harbor RV Park — Jersey City</div>
+        <div class="stop-sub">11 Marin Blvd, Jersey City NJ · ימים 1–3 + 20–21</div>
+        <div class="stop-details">
+          <span class="stop-detail">Full Hookup ★</span>
+          <span class="stop-detail">NYC גישה ישירה</span>
+          <span class="stop-detail">$100–110/לילה</span>
+        </div>
+      </div>
+      <div class="stop-price">25 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">2</div>
+      <div class="stop-info">
+        <div class="stop-name">🎢 Butterfly Camping Resort — Jackson NJ</div>
+        <div class="stop-sub">360 Butterfly Rd, Jackson NJ · ימים 4–5 · 5 mi מSix Flags</div>
+        <div class="stop-details">
+          <span class="stop-detail">$60–80/לילה</span>
+          <span class="stop-detail">בריכה</span>
+          <span class="stop-detail">732-928-2107</span>
+        </div>
+      </div>
+      <div class="stop-price">+65 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">3</div>
+      <div class="stop-info">
+        <div class="stop-name">🎰 Tip Tam Camping — Washington Township NJ</div>
+        <div class="stop-sub">68 Tip Tam Rd · יום 6 · דרך Asbury Park (Silverball)</div>
+        <div class="stop-details">
+          <span class="stop-detail">$65–75/לילה</span>
+          <span class="stop-detail">55 mi מNYC</span>
+          <span class="stop-detail">908-689-4145</span>
+        </div>
+      </div>
+      <div class="stop-price">+95 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">4</div>
+      <div class="stop-info">
+        <div class="stop-name">🌊 Rip Van Winkle Camp — Saugerties NY</div>
+        <div class="stop-sub">149 Blue Mountain Rd · יום 7 · Hudson Valley</div>
+        <div class="stop-details">
+          <span class="stop-detail">$55–75/לילה</span>
+          <span class="stop-detail">845-246-8334</span>
+        </div>
+      </div>
+      <div class="stop-price">+110 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">5</div>
+      <div class="stop-info">
+        <div class="stop-name">🏄 Arrowhead Marina & RV Park — Lake Luzerne NY</div>
+        <div class="stop-sub">ימים 8–9 · בסיס רפטינג · Warren County</div>
+        <div class="stop-details">
+          <span class="stop-detail">$55–75/לילה</span>
+          <span class="stop-detail">518-696-2253</span>
+        </div>
+      </div>
+      <div class="stop-price">+100 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-city">6</div>
+      <div class="stop-info">
+        <div class="stop-name">🌲 Lake George RV Park — Diamond Point NY</div>
+        <div class="stop-sub">74 Rte 149, Lake George NY · יום 10 · Adirondack Extreme</div>
+        <div class="stop-details">
+          <span class="stop-detail">$75–110/לילה</span>
+          <span class="stop-detail">518-792-3775</span>
+          <span class="stop-detail">Pull-through 60ft</span>
+        </div>
+      </div>
+      <div class="stop-price">+30 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-city">7</div>
+      <div class="stop-info">
+        <div class="stop-name">🏔️ Lake Placid KOA — Wilmington NY</div>
+        <div class="stop-sub">77 Fox Farm Rd, Wilmington NY · ימים 11–12</div>
+        <div class="stop-details">
+          <span class="stop-detail">$70–100/לילה</span>
+          <span class="stop-detail">518-946-7878</span>
+          <span class="stop-detail">10 mi מLake Placid</span>
+        </div>
+      </div>
+      <div class="stop-price">+60 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">8</div>
+      <div class="stop-info">
+        <div class="stop-name">🌊 Verona Beach Campground — Oneida Lake NY</div>
+        <div class="stop-sub">יום 13 · תחנת ביניים אסטרטגית לניאגרה</div>
+        <div class="stop-details">
+          <span class="stop-detail">$55–70/לילה</span>
+          <span class="stop-detail">I-90 Thruway Toll ~$8</span>
+        </div>
+      </div>
+      <div class="stop-price">+130 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-city">9</div>
+      <div class="stop-info">
+        <div class="stop-name">⚡ Niagara Falls KOA — Grand Island NY</div>
+        <div class="stop-sub">2570 Grand Island Blvd · ימים 14–15 · Pull-through עד 70ft</div>
+        <div class="stop-details">
+          <span class="stop-detail">$75–105/לילה</span>
+          <span class="stop-detail">716-773-7583</span>
+          <span class="stop-detail">Toll I-90 ~$10</span>
+        </div>
+      </div>
+      <div class="stop-price">+145 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">10</div>
+      <div class="stop-info">
+        <div class="stop-name">🍇 Watkins Glen KOA — Finger Lakes NY</div>
+        <div class="stop-sub">Watkins Glen NY · ימים 16–17 · 1 mi מState Park</div>
+        <div class="stop-details">
+          <span class="stop-detail">$65–90/לילה</span>
+          <span class="stop-detail">607-535-7404</span>
+          <span class="stop-detail">Pull-through 75ft</span>
+        </div>
+      </div>
+      <div class="stop-price">+120 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop">
+      <div class="stop-dot stop-dot-camp">11</div>
+      <div class="stop-info">
+        <div class="stop-name">🌲 Catskill Mountain KOA — Woodridge NY</div>
+        <div class="stop-sub">Sullivan County · ימים 18–19</div>
+        <div class="stop-details">
+          <span class="stop-detail">$65–85/לילה</span>
+          <span class="stop-detail">koa.com</span>
+        </div>
+      </div>
+      <div class="stop-price">+120 mi</div>
+    </div>
+    <div class="route-connector"></div>
+
+    <div class="route-stop" style="border:none;">
+      <div class="stop-dot stop-dot-base">A</div>
+      <div class="stop-info">
+        <div class="stop-name">🏁 חזרה: Liberty Harbor → Edison Depot</div>
+        <div class="stop-sub">יום 20 חזרה לJersey City · יום 21 החזרת RV + טיסה</div>
+        <div class="stop-details">
+          <span class="stop-detail">Toll I-87 ~$5</span>
+          <span class="stop-detail">יציאה 08:00 קשיחה</span>
+        </div>
+      </div>
+      <div class="stop-price">+130 mi</div>
+    </div>
+
+  </div><!-- /route-stops -->
+
+  <div class="card card-yellow" style="margin-top:16px;">
+    <div style="font-family:var(--font-display);font-size:18px;letter-spacing:2px;margin-bottom:10px;">⚠️ MILEAGE TRACKER</div>
+    <div class="budget-row">
+      <span>מיילים בין-חניוניים</span>
+      <div><div class="budget-amount" style="color:var(--accent3);">~1,186 mi</div></div>
+    </div>
+    <div class="budget-row">
+      <span>+ טיולי יום + עיר (אומדן)</span>
+      <div><div class="budget-amount" style="color:var(--accent2);">~300–500 mi</div></div>
+    </div>
+    <div class="budget-row">
+      <span>סך הכל אומדן</span>
+      <div><div class="budget-amount">~1,500–1,700 mi</div></div>
+    </div>
+    <div class="budget-row" style="border:none;">
+      <span>תקרת מכסה (כלול)</span>
+      <div><div class="budget-amount" style="color:var(--green);">2,100 mi ✅ בטוח</div></div>
+    </div>
+    <div style="font-size:11px;color:var(--accent);margin-top:8px;">⚠️ בדוק מד מייל ביומי 8, 13, 15, 17. חריגה = $0.35/מייל נוסף.</div>
+  </div>
+
+</div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">05 — BUDGET</div>
+    <div class="section-title">💰 תקציב</div>
+    <div class="section-sub">5 אנשים · 21 יום · כל ההוצאות הצפויות</div>
+  </div>
+
+  <div class="budget-total-card">
+    <div class="budget-total-label">סה״כ לקבוצה (ללא טיסות)</div>
+    <div class="budget-total-num">$7,132–$9,946</div>
+    <div class="budget-total-sub">חלוקה ל-5:</div>
+    <div class="budget-total-per">$1,426–$1,989 לאדם</div>
+    <div style="margin-top:8px;font-size:13px;color:var(--muted);">+ אוכל ~$30–50/יום/אדם = עוד $630–1,050 לאיש<br>
+    + טיסות ~$900/אדם<br>
+    <strong style="color:var(--accent2);">→ סה"כ כולל הכל: ~$2,950–$3,950 לאדם</strong></div>
+  </div>
+
+  <div class="card">
+    <div class="budget-row">
+      <div class="budget-row-name">
+        <div class="budget-icon" style="background:rgba(255,77,28,.15);">🚐</div>
+        שכירות 25ft (21 לילות)
+      </div>
+      <div class="budget-row-amounts">
+        <div class="budget-amount">$3,675–$4,620</div>
+        <div class="budget-per">$175–220/לילה</div>
+      </div>
+    </div>
+    <div class="budget-bar-wrap">
+      <div class="budget-bar-track"><div class="budget-bar-fill" style="--w:60%;width:60%;background:var(--accent);"></div></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-row-name">
+        <div class="budget-icon" style="background:rgba(0,229,255,.12);">🛡️</div>
+        ביטוח Standard ($39/יום)
+      </div>
+      <div class="budget-row-amounts">
+        <div class="budget-amount">$819</div>
+        <div class="budget-per">$164/אדם</div>
+      </div>
+    </div>
+    <div class="budget-bar-wrap">
+      <div class="budget-bar-track"><div class="budget-bar-fill" style="width:10%;background:var(--accent3);"></div></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-row-name">
+        <div class="budget-icon" style="background:rgba(0,255,136,.12);">🏕️</div>
+        חניונים (21 לילות)
+      </div>
+      <div class="budget-row-amounts">
+        <div class="budget-amount">$1,365–$2,100</div>
+        <div class="budget-per">$65–100/לילה</div>
+      </div>
+    </div>
+    <div class="budget-bar-wrap">
+      <div class="budget-bar-track"><div class="budget-bar-fill" style="width:22%;background:var(--green);"></div></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-row-name">
+        <div class="budget-icon" style="background:rgba(255,184,0,.12);">⛽</div>
+        דלק (10 MPG, 1,186 mi × $3.8)
+      </div>
+      <div class="budget-row-amounts">
+        <div class="budget-amount">$451–$570</div>
+        <div class="budget-per">~$90–114/אדם</div>
+      </div>
+    </div>
+    <div class="budget-bar-wrap">
+      <div class="budget-bar-track"><div class="budget-bar-fill" style="width:7%;background:var(--accent2);"></div></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-row-name">
+        <div class="budget-icon" style="background:rgba(255,77,28,.1);">🎢</div>
+        אטרקציות (Six Flags, Rafting, Aerial, Niagara...)
+      </div>
+      <div class="budget-row-amounts">
+        <div class="budget-amount">$600–$1,000</div>
+        <div class="budget-per">$120–200/אדם</div>
+      </div>
+    </div>
+    <div class="budget-bar-wrap">
+      <div class="budget-bar-track"><div class="budget-bar-fill" style="width:10%;background:var(--accent);"></div></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-row-name">
+        <div class="budget-icon" style="background:rgba(0,229,255,.1);">🚇</div>
+        תחבורה NYC (OMNY × 5 + Uber)
+      </div>
+      <div class="budget-row-amounts">
+        <div class="budget-amount">$250–$450</div>
+        <div class="budget-per">$50–90/אדם</div>
+      </div>
+    </div>
+    <div class="budget-bar-wrap">
+      <div class="budget-bar-track"><div class="budget-bar-fill" style="width:5%;background:var(--accent3);"></div></div>
+    </div>
+
+    <div class="budget-row">
+      <div class="budget-row-name">
+        <div class="budget-icon" style="background:rgba(0,255,136,.1);">📦</div>
+        Comfort Kit + ציוד (קנה עצמאית Walmart)
+      </div>
+      <div class="budget-row-amounts">
+        <div class="budget-amount">$50–$80</div>
+        <div class="budget-per">חיסכון $120 vs Cruise America Kit</div>
+      </div>
+    </div>
+    <div class="budget-bar-wrap" style="margin-bottom:0;">
+      <div class="budget-bar-track"><div class="budget-bar-fill" style="width:1%;background:var(--green);"></div></div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:16px;">
+    <div class="card card-accent">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">✈️ טיסות (נפרד)</div>
+      <div class="budget-row">
+        <span>El Al / United (RT)</span>
+        <div><div class="budget-amount">~$900/אדם</div></div>
+      </div>
+      <div class="budget-row" style="border:none;">
+        <span>× 5 אנשים</span>
+        <div><div class="budget-amount">~$4,500</div></div>
+      </div>
+    </div>
+    <div class="card card-green">
+      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🍔 אוכל (נפרד)</div>
+      <div class="budget-row">
+        <span>~$30–50/יום/אדם</span>
+        <div><div class="budget-amount">$630–1,050</div></div>
+      </div>
+      <div class="budget-row" style="border:none;">
+        <span>+ קניות Walmart יום 1</span>
+        <div><div class="budget-amount">~$300 לקבוצה</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:16px;background:rgba(255,184,0,.05);border-color:rgba(255,184,0,.3);">
+    <div style="font-family:var(--font-display);font-size:20px;letter-spacing:2px;margin-bottom:10px;color:var(--accent2);">💡 TOLL SUMMARY</div>
+    <div class="budget-row"><span>I-87 Thruway (כמה פעמים)</span><div><div class="budget-amount">~$35–45</div></div></div>
+    <div class="budget-row"><span>Rainbow Bridge (ברגל × 5)</span><div><div class="budget-amount">~$5</div></div></div>
+    <div class="budget-row" style="border:none;"><span>סה"כ Tolls משוער</span><div><div class="budget-amount">~$50–70 לקבוצה</div></div></div>
+  </div>
+
+</div>
+</section>
+
+<!-- LOGISTICS -->
+<section id="logistics">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">06 — LOGISTICS</div>
+    <div class="section-title">📋 לוגיסטיקה</div>
+    <div class="section-sub">מסמכים · רישיונות · הזמנות · ציר זמן הכנה</div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="card card-accent" style="margin-bottom:16px;">
+    <div style="font-family:var(--font-display);font-size:20px;letter-spacing:2px;margin-bottom:12px;">📅 ציר זמן הכנה</div>
+    <div class="checklist-item">
+      <div class="check-icon">🔴</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">ספטמבר–אוקטובר 2026 — הזמן עכשיו!</div>
+        <div class="checklist-item-sub">קרוואן Cruise America (6–12 חודשים מראש). כרטיסי טיסה El Al / United (חיסכון $200–400/אדם). Liberty Harbor RV Park (3 לילות ימים 1–3 + ימים 20–21).</div>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">🟠</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">נובמבר–דצמבר 2026</div>
+        <div class="checklist-item-sub">KOA Lake Placid (Wilmington), Lake George RV Park, Niagara Falls KOA, Watkins Glen KOA, Catskill Mountain KOA. כרטיסי Six Flags אונליין.</div>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">🟡</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">ינואר 2027</div>
+        <div class="checklist-item-sub">שאר החניונים (Butterfly, Tip Tam, Rip Van Winkle, Arrowhead, Verona Beach). הזמנת Rafting (Hudson River Rafting Co).</div>
+      </div>
+    </div>
+    <div class="checklist-item" style="border:none;">
+      <div class="check-icon">🟢</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">מאי–יוני 2027 — אימות סופי</div>
+        <div class="checklist-item-sub">אישור כל הזמנות. הורדת אפליקציות. הכנת מסמכים. קניית ציוד (ישראל). הורדת מפות אופליין. הכנת רשימת מכולת.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DOCS -->
+  <div class="card card-blue" style="margin-bottom:16px;">
+    <div style="font-family:var(--font-display);font-size:20px;letter-spacing:2px;margin-bottom:12px;">📄 מסמכים ורישיונות</div>
+    <div class="checklist-item">
+      <div class="check-icon">🛂</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">דרכון ישראלי תקף</div>
+        <div class="checklist-item-sub">תוקף לפחות 6 חודשים אחרי תאריך החזרה (ינואר 2028). <strong>חובה לניאגרה קנדה!</strong></div>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">🇺🇸</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">ESTA — ויזת כניסה לארה"ב</div>
+        <div class="checklist-item-sub">$21/אדם · תוקף 2 שנים. הגש לפחות 72 שעות לפני טיסה.</div>
+        <a href="https://esta.cbp.dhs.gov" target="_blank" class="checklist-item-link">esta.cbp.dhs.gov ↗</a>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">🪪</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">רישיון נהיגה ישראלי + תרגום לאנגלית</div>
+        <div class="checklist-item-sub">רישיון ישראלי תקף בארה"ב. Cruise America דורש נהג רשום בחוזה. כל מי שינהג — חייב להיות ברשימה. IDP (International Driving Permit) לא חובה אך מומלץ למניעת ויכוחים.</div>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">🏥</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">ביטוח בריאות לחו"ל</div>
+        <div class="checklist-item-sub">חובה! ביטוח רפואי בארה"ב = יקר מאוד ללא ביטוח. טיפול ER = $5,000–50,000. מומלץ: AXA, Allianz, Harel. תכסה גם פעילויות אקסטרים (רפטינג, זיפליין)!</div>
+      </div>
+    </div>
+    <div class="checklist-item" style="border:none;">
+      <div class="check-icon">💳</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">כרטיס אשראי Visa/Mastercard בינלאומי</div>
+        <div class="checklist-item-sub">Cruise America: פיקדון $300 בכ.א. ⚠️ אין כיסוי RV בכרטיסי אשראי (Chase, Amex, Capital One — לא מכסים קרוואנים). חובה ביטוח נפרד.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APPS -->
+  <div class="card card-green">
+    <div style="font-family:var(--font-display);font-size:20px;letter-spacing:2px;margin-bottom:12px;">📱 אפליקציות חובה</div>
+    <div class="checklist-item">
+      <div class="check-icon">🗺️</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">CoPilot GPS — ניווט RV ראשי</div>
+        <div class="checklist-item-sub">פרופיל: Height=11'6", Length=25ft, Weight=14,500lbs. מסד נתוני גשרים + Parkway restrictions. עובד Offline. ~$35/שנה.</div>
+        <a href="https://copilot.com" target="_blank" class="checklist-item-link">copilot.com ↗</a>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">🏕️</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">The Dyrt Pro — גיבוי חניונים</div>
+        <div class="checklist-item-sub">ביקורות + Offline maps. פילטר: Full Hookup + 25ft+. $35/שנה.</div>
+        <a href="https://thedyrt.com" target="_blank" class="checklist-item-link">thedyrt.com ↗</a>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">⛽</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">GasBuddy + Pilot Flying J</div>
+        <div class="checklist-item-sub">מחירי דלק + Truck Stops (canopy 14ft+). בטוח לRV. חינמי.</div>
+        <a href="https://gasbuddy.com" target="_blank" class="checklist-item-link">gasbuddy.com ↗</a>
+      </div>
+    </div>
+    <div class="checklist-item" style="border:none;">
+      <div class="check-icon">📡</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">Maps.me — מפות Offline</div>
+        <div class="checklist-item-sub">הורד כל המסלול offline לפני יציאה. קריטי לאדירונדאק (כיסוי סלולרי חלש).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VACCINATIONS -->
+  <div class="card card-yellow" style="margin-top:16px;">
+    <div style="font-family:var(--font-display);font-size:20px;letter-spacing:2px;margin-bottom:12px;">💉 חיסונים + בריאות</div>
+    <div class="checklist-item">
+      <div class="check-icon">✅</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">אין חיסונים חובה לארה"ב</div>
+        <div class="checklist-item-sub">ארה"ב לא דורשת חיסון מכניסה. COVID — בדוק מדיניות עדכנית לפני הנסיעה.</div>
+      </div>
+    </div>
+    <div class="checklist-item">
+      <div class="check-icon">💊</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">תרופות שחובה להביא</div>
+        <div class="checklist-item-sub">Imodium (שלשול — מעבר לתזונה אמריקאית). Dramamine (מחלת נסיעה בהרים). Advil/Tylenol. כדורי אלקטרוליטים. ספריי DEET גבוה (יתושים אדירונדאק!).</div>
+      </div>
+    </div>
+    <div class="checklist-item" style="border:none;">
+      <div class="check-icon">🩺</div>
+      <div class="checklist-item-content">
+        <div class="checklist-item-title">ביטוח בריאות — כולל אקסטרים</div>
+        <div class="checklist-item-sub">ודא שהביטוח מכסה: Whitewater Rafting (Class III–IV), Ziplines, Aerial obstacle course. חלק מביטוחים מחריגים פעילויות "extreme".</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- GEAR -->
+<section id="gear">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">07 — GEAR</div>
+    <div class="section-title">🎒 ציוד</div>
+    <div class="section-sub">מה מביאים מישראל · מה קונים ב-Walmart ביום 1</div>
+  </div>
+
+  <div class="gear-category">
+    <div class="gear-cat-title">✈️ מביאים מהארץ</div>
+    <div class="gear-grid">
+      <div class="gear-item"><div class="gear-emoji">🥾</div><div class="gear-text"><strong>נעלי הליכה / טרקים</strong><span>חיוניות ל-Gorge Trail + Kaaterskill + Whiteface</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🩱</div><div class="gear-text"><strong>בגד ים + מגבת קטנה (Microfiber)</strong><span>Six Flags Hurricane Harbor + שחייה</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">☀️</div><div class="gear-text"><strong>קרם הגנה SPF50+</strong><span>לפחות 2 בקבוקים גדולים</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🦟</div><div class="gear-text"><strong>ספריי DEET 30%+</strong><span>אדירונדאק = יתושים קשים ביולי</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🔌</div><div class="gear-text"><strong>Power Bank גדול (20,000mAh)</strong><span>לכל אחד — ימים ארוכים ללא חשמל</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">📱</div><div class="gear-text"><strong>כרטיס SIM אמריקאי</strong><span>T-Mobile / AT&T Prepaid. קנה ב-EWR עם הנחיתה. $30–50/חודש unlimited.</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🧢</div><div class="gear-text"><strong>כובע + משקפי שמש</strong><span>יולי = חום + שמש חזקה</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🎒</div><div class="gear-text"><strong>תרמיל 20–30L לטיולים</strong><span>לא מזוודה גדולה לאטרקציות</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🧪</div><div class="gear-text"><strong>תרופות אישיות + אנטי-היסטמין</strong><span>קשה למצוא מותגים ישראלים בחו"ל</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🔒</div><div class="gear-text"><strong>מנעול קטן לתרמיל</strong><span>בפארקים / Six Flags / locker</span></div></div>
+    </div>
+  </div>
+
+  <div class="gear-category">
+    <div class="gear-cat-title">🛒 קונים ב-Walmart יום 1 (ב-Uber, לא ב-RV!)</div>
+    <div class="gear-grid">
+      <div class="gear-item"><div class="gear-emoji">🧻</div><div class="gear-text"><strong>RV-Safe Toilet Paper (2 חבילות)</strong><span>חובה! נייר רגיל יסתום את המכל. ~$18</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🫧</div><div class="gear-text"><strong>Aqua-Kem / Happy Camper (טבליות BW)</strong><span>טבליה אחרי כל ריקון. ~$12</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🧤</div><div class="gear-text"><strong>כפפות ניטריל (חבילה גדולה)</strong><span>לחיבור צינור ביוב. לא בידיים חשופות!</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🍳</div><div class="gear-text"><strong>2 מחבתות + סיר גדול</strong><span>~$25. לא לקנות Comfort Kit ($189) — חיסכון $160</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🥄</div><div class="gear-text"><strong>כלים + סכין + קרש חיתוך</strong><span>~$15</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🥡</div><div class="gear-text"><strong>צלחות + כוסות נייר (חבילת ענק)</strong><span>חוסך שטיפת כלים ומים יקרים. ~$12</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">💧</div><div class="gear-text"><strong>4 שישיות גלוני מים גדולות</strong><span>לא שותים מהמכל! ~$20</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">☕</div><div class="gear-text"><strong>קפה + חלב עמיד + חטיפי חלבון</strong><span>~$40</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🥜</div><div class="gear-text"><strong>חמאת בוטנים ענק + לחם + טונה</strong><span>ארוחות מהירות + חיסכון vs. מסעדות. ~$30</span></div></div>
+      <div class="gear-item"><div class="gear-emoji">🧽</div><div class="gear-text"><strong>Clorox Wipes + נוזל כלים + שקיות זבל</strong><span>היגיינה 21 ימים. ~$20</span></div></div>
+    </div>
+  </div>
+
+  <div class="card card-yellow">
+    <div style="font-family:var(--font-display);font-size:18px;letter-spacing:2px;margin-bottom:8px;">⚠️ כרטיסי SIM — חשוב מאוד</div>
+    <div style="font-size:13px;line-height:1.7;">
+      הביאו כרטיסי SIM מישראל (ESIM) OR קנו ב-EWR עם הנחיתה. <strong>T-Mobile</strong> = הכיסוי הטוב ביותר ב-Adirondacks ובאזורים כפריים. <strong>~$30/חודש Prepaid unlimited</strong> (data+שיחות). ב-Lake Placid / Adirondacks — כיסוי חלש, הורידו מפות offline מראש!
+    </div>
+  </div>
+
+</div>
+</section>
+
+<!-- DEVIL'S ADVOCATE -->
+<section id="devil">
+<div class="container">
+  <div class="section-header">
+    <div class="section-label">08 — DEVIL'S ADVOCATE</div>
+    <div class="section-title">😈 פרקליט השטן</div>
+    <div class="section-sub">תרחישי כשל · תוכניות ב' · דברים שיכולים להשתבש</div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-high">🔴 סיכון גבוה</span>
+      <div class="risk-title">✈️ קרוואן לא זמין / גנוב / פגוע עם ההגעה</div>
+    </div>
+    <div class="risk-body">Cruise America ביולי = צי בשיא עומס. מקרים של רכבים שחוזרים פגועים ולא מוחלפים בזמן. הגעתם לאדיסון בבוקר יום 1 — אין RV.</div>
+    <div class="risk-solution">
+      <strong>תוכנית ב':</strong> Outdoorsy NJ/NY — רשת פרטית. Indie Campers JFK — אלטרנטיבה עם Unlimited Miles. <strong>הזמינו את Cruise America 6+ חודשים מראש וקבלו אישור בכתב.</strong> אספו מספר טלפון נציג ישיר. שמרו את מספר 1-800-334-4110.
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-high">🔴 סיכון גבוה</span>
+      <div class="risk-title">🌉 גשר נמוך / Parkway בניגוד לניווט</div>
+    </div>
+    <div class="risk-body">הנהג "עוקף" את CoPilot ונכנס לParkway. גשר נמוך = נזק לגג = אינו מכוסה בשום ביטוח = $10,000–$80,000 מהכיס.</div>
+    <div class="risk-solution">
+      <strong>חוק ברזל:</strong> CoPilot פעיל תמיד עם פרופיל 11'6". אם CoPilot אומר לא — לא. אם הגעתם לגשר חשוד — עצרו, שני אנשים יורדים ומודדים עין. ⛔ לעולם לא מנסים "לנחש". השתמשו <a href="https://www.copilotgps.com" target="_blank" class="attraction-link">copilot.com</a>
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-high">🔴 סיכון גבוה</span>
+      <div class="risk-title">⏰ איחור ביום 21 — החזרת RV</div>
+    </div>
+    <div class="risk-body">פקק NJ Turnpike בוקר יום עמוס + תאונה + Dump Station ארוכה = איחור. קנס $50/שעה + סיכון לטיסה.</div>
+    <div class="risk-solution">
+      <strong>תוכנית ב':</strong> לינת יום 20 ב-Liberty Harbor = 25 מייל בלבד לאדיסון. יציאה 08:00 קשיחה. נהג גיבוי ישן מוקדם. אין עצירות ב"שעה האחרונה". אם יש עיכוב — <strong>התקשרו לאדיסון מיד</strong> (732-985-4040).
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-med">🟡 סיכון בינוני</span>
+      <div class="risk-title">💦 גלישת מים נמוכים ביולי — הרפטינג מבוטל</div>
+    </div>
+    <div class="risk-body">Upper Hudson ביולי תלוי בגשמים. שנה יבשה = מים נמוכים = Hudson River Rafting Co. מבטל את הסיור.</div>
+    <div class="risk-solution">
+      <strong>תוכנית ב':</strong> Sacandaga River — גובה מים מובטח ביולי. TNT Outdoors North Creek — קיאקינג + SUP כחלופה. Adirondack Extreme Adventure Course (Lake George) = ניתן להחליף ביום 9 במקום יום 10.
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-med">🟡 סיכון בינוני</span>
+      <div class="risk-title">🌧️ יומיים גשם רציפים ב-Adirondacks</div>
+    </div>
+    <div class="risk-body">יולי = season of thunderstorms. 5 גברים + קרוואן 25ft + גשם עמוס = מלחמת אגרופים נפשית.</div>
+    <div class="risk-solution">
+      <strong>תוכנית ב':</strong> יום גשם = יום "גיקי פנימי". Saratoga Springs MuseumS, Bowling, קזינו Resorts World Catskills (Woodridge). Olympic Museum ב-Lake Placid = מקורה מעולה. הכינו רשימת "ימי גשם" מראש.
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-med">🟡 סיכון בינוני</span>
+      <div class="risk-title">💩 תקלת מכל שחור / גדיש / ריח</div>
+    </div>
+    <div class="risk-body">מישהו שבר את פרוטוקול "שתן בלבד" → מכל מלא → ריח ביוב עולה לחלל המגורים בחום יולי.</div>
+    <div class="risk-solution">
+      <strong>חוק ברזל:</strong> שירותים = שתן בלבד. בSpot = KOA restrooms. הפר = הוא מחבר צינור הביוב. Aqua-Kem אחרי כל ריקון. <strong>ריקון כל 36 שעות מקסימום.</strong>
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-med">🟡 סיכון בינוני</span>
+      <div class="risk-title">🏥 פציעה ספורטיבית (רפטינג / זיפליין / נפילה בגורג')</div>
+    </div>
+    <div class="risk-body">Watkins Glen Gorge Trail = רטוב + מדרגות חלקות. רפטינג Class III = אפשרי לנפול מהסירה. זיפליין / Aerial = סיכון שבר.</div>
+    <div class="risk-solution">
+      <strong>ביטוח בריאות שמכסה אקסטרים — חובה לפני יציאה!</strong> ER ללא ביטוח = $15,000–$50,000. הכינו ערכת עזרה ראשונה + Blister pads. Watkins Glen: נעלי הליכה עם אחיזה, לא כפכפים!
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-med">🟡 סיכון בינוני</span>
+      <div class="risk-title">📵 נכנסים לחניון מלא ללא קליטה סלולרית (Adirondacks)</div>
+    </div>
+    <div class="risk-body">Lake Luzerne / Wilmington = כיסוי T-Mobile חלש. Campendium לא עולה. הגעתם ב-20:00 ואין מקום.</div>
+    <div class="risk-solution">
+      <strong>פרוטוקול:</strong> עצור בנקודת קליטה אחרונה ב-I-87. שלוף Maps.me Offline + Campendium שהורדת. חניית לילה ב-Walmart (Glens Falls / Plattsburgh) = מאשרים RVs. לעולם לא נוהגים בחשיכה בהרים מחפשים חניון.
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-low">🟢 סיכון נמוך</span>
+      <div class="risk-title">🛢️ חריגת מיילאז' מעל 2,100</div>
+    </div>
+    <div class="risk-body">בין-חניוני 1,186 mi + טיולי יום = אומדן 1,500–1,700. אם הוסיפו טיולים ספונטניים — ייתכן קרוב ל-2,000.</div>
+    <div class="risk-solution">
+      <strong>בדוק מד מייל</strong> ביומי 8, 13, 15, 17. אם מגיעים ל-1,800 — הפחיתו טיולי יום. חריגה = $0.35/מייל. 200 מייל נוסף = $70 בלבד — לא קריטי.
+    </div>
+  </div>
+
+  <div class="risk-card">
+    <div class="risk-header">
+      <span class="risk-level risk-low">🟢 סיכון נמוך</span>
+      <div class="risk-title">💸 כרטיסי טיסה שנרכשו מוקדם — ביטול / שינוי</div>
+    </div>
+    <div class="risk-body">רכשתם כרטיסים אוקטובר 2026 — מישהו לא יוכל לצאת ביולי 2027.</div>
+    <div class="risk-solution">
+      <strong>קנו כרטיסים עם אפשרות שינוי</strong> (El Al — Flexi Fare). El Al מציע change fee נמוך יחסית. ביטוח נסיעה בנוסף לביטוח בריאות יכסה ביטול מוצדק.
+    </div>
+  </div>
+
+  <div class="risk-card" style="border-color:rgba(255,77,28,.5);">
+    <div class="risk-header">
+      <span class="risk-level risk-high">🔴 חשוב ביותר</span>
+      <div class="risk-title">🤝 קונפליקטים בין חברים ב-21 יום יחד</div>
+    </div>
+    <div class="risk-body">5 גברים + קרוואן 25ft + 3 שבועות = לחץ. חילוקי דעות על קצב, תוכנית, כסף. אחד רוצה לנוח, אחר רוצה עוד אטרקציה.</div>
+    <div class="risk-solution">
+      <strong>תוכנית מניעה:</strong> (1) קבעו "משמרת נהג" = נהג היום לא מתווכח. (2) "ערב חופשי" בכל שבוע — כל אחד עושה מה שרוצה. (3) קובעים "קאפ יומי" תקציב משותף מראש. (4) כל אחד ישן במיטה קבועה — פחות ויכוחים.
+    </div>
+  </div>
+
+</div>
+</section>
+
+<script>
+  function showSection(id, btn) {
+    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    const sec = document.getElementById(id);
+    if (sec) sec.classList.add('active');
+    if (btn) btn.classList.add('active');
+    window.scrollTo(0, 0);
+  }
+
+  function showWeek(id, btn) {
+    document.querySelectorAll('.week-content').forEach(w => w.classList.remove('active'));
+    document.querySelectorAll('.week-tab').forEach(b => b.classList.remove('active'));
+    const wc = document.getElementById(id);
+    if (wc) wc.classList.add('active');
+    if (btn) btn.classList.add('active');
+  }
+
+  function toggleDay(header) {
+    const card = header.parentElement;
+    card.classList.toggle('open');
+  }
+
+  function openDay(num) {
+    // find the day card and open it
+    const cards = document.querySelectorAll('.day-card');
+    cards.forEach(c => {
+      const numEl = c.querySelector('.day-num');
+      if (numEl && parseInt(numEl.textContent) === num) {
+        c.classList.add('open');
+        c.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+  }
+</script>
+</body>
+</html>
