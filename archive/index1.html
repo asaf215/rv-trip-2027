@@ -338,29 +338,7 @@
   .gear-text strong { display: block; font-size: 13px; margin-bottom: 1px; }
   .gear-text span { color: var(--muted); font-size: 11px; }
 
-  /* ── ASAF HAMELECH ── */
-  .asaf-hamelech {
-    position: fixed;
-    bottom: 18px;
-    right: 18px;
-    z-index: 999;
-    background: linear-gradient(135deg, rgba(255,184,0,.18), rgba(255,77,28,.10));
-    border: 1.5px solid var(--accent2);
-    border-radius: 12px;
-    padding: 7px 14px;
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--accent2);
-    letter-spacing: 1px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 20px rgba(255,184,0,.2);
-    pointer-events: none;
-    user-select: none;
-    white-space: nowrap;
-  }
-
-
+  /* ── PROGRESS BARS ANIMATION ── */
   @keyframes growBar { from { width: 0; } to { width: var(--w); } }
   .animated-bar { animation: growBar .8s ease forwards; }
 
@@ -400,13 +378,8 @@
     <button class="nav-btn" onclick="showSection('logistics', this)">📋 לוגיסטיקה</button>
     <button class="nav-btn" onclick="showSection('gear', this)">🎒 ציוד</button>
     <button class="nav-btn" onclick="showSection('devil', this)">😈 פרקליט השטן</button>
-    <button class="nav-btn" onclick="showSection('selfdefense', this)">🛡️ הגנה עצמית</button>
-    <button class="nav-btn" onclick="showSection('concerts', this)">🎵 הופעות</button>
   </div>
 </nav>
-
-<!-- ASAF HAMELECH — FIXED BADGE -->
-<div class="asaf-hamelech">👑 אסף המלך 👑</div>
 
 <!-- COVER -->
 <section id="cover" class="active">
@@ -793,7 +766,7 @@
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">03</div>
         <div class="day-title-block">
-          <div class="day-title">🎮 Nintendo NY + DUMBO + 🛍️ קניות NYC</div>
+          <div class="day-title">🎮 Nintendo NY + Midtown Comics + DUMBO</div>
           <div class="day-meta">Liberty Harbor בסיס · תחבורה ציבורית בלבד · OMNY Card</div>
           <div class="day-tags"><span class="tag tag-blue">גיקי NYC</span></div>
         </div>
@@ -807,31 +780,20 @@
             <div style="text-align:right;"><span class="attraction-price">חינם</span><br><a href="https://nintendony.com" target="_blank" class="attraction-link">nintendony.com ↗</a></div>
           </div>
           <div class="attraction-item">
+            <span class="attraction-name">📚 Midtown Comics — 459 Lexington Ave (הגדולה בעולם)</span>
+            <div style="text-align:right;"><span class="attraction-price">קניות לפי רצון</span><br><a href="https://www.midtowncomics.com" target="_blank" class="attraction-link">midtowncomics.com ↗</a></div>
+          </div>
+          <div class="attraction-item">
             <span class="attraction-name">📸 DUMBO Brooklyn — Brooklyn Bridge Park</span>
             <span class="attraction-price">חינם</span>
-          </div>
-          <div class="attraction-item">
-            <span class="attraction-name">🛍️ 5th Avenue Shopping — Apple Store, Uniqlo, H&M, Zara</span>
-            <span class="attraction-price">לפי תקציב אישי</span>
-          </div>
-          <div class="attraction-item">
-            <span class="attraction-name">🛒 SoHo Shopping District — Canal St, Spring St, Canal St</span>
-            <div style="text-align:right;"><span class="attraction-price">מציאות + ברנדים</span></div>
-          </div>
-          <div class="attraction-item">
-            <span class="attraction-name">🎮 B&H Photo Video (צלמים + גאדג'טים) — 420 9th Ave</span>
-            <div style="text-align:right;"><span class="attraction-price">חינם לכניסה</span><br><a href="https://www.bhphotovideo.com" target="_blank" class="attraction-link">bhphotovideo.com ↗</a></div>
           </div>
           <div class="attraction-item">
             <span class="attraction-name">🚇 OMNY Card × 5 (שבועי $34 כ"א)</span>
             <span class="attraction-price">$170 לקבוצה</span>
           </div>
         </div>
-        <div class="card" style="background:rgba(255,184,0,.08);border-color:rgba(255,184,0,.3);margin-top:10px;font-size:12px;padding:10px;">
-          🛍️ <strong>טיפ קניות NYC:</strong> הגיעו ל-SoHo לפני 11:00 — פחות עומס. B&H פתוח א–ה. Canal Street = מחירי מציאה על אלקטרוניקה. <strong>שמרו מקום בתרמיל!</strong>
-        </div>
         <div class="day-info-row">
-          <div class="day-info-item"><strong>מסלול תחבורה</strong>Light Rail → PATH → WTC → A/C → 50th (Nintendo) → F → York St (DUMBO) → A → 34th (B&H) → N/Q/R → Prince St (SoHo)</div>
+          <div class="day-info-item"><strong>מסלול תחבורה</strong>Light Rail → PATH → WTC → A/C → 50th (Nintendo) → 6 → Grand Central (Comics) → F → York St (DUMBO)</div>
         </div>
       </div>
     </div>
@@ -1064,7 +1026,7 @@
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">12</div>
         <div class="day-title-block">
-          <div class="day-title">🏔️ Whiteface Mountain + Mirror Lake</div>
+          <div class="day-title">🏔️ Whiteface Mountain + Olympic Museum</div>
           <div class="day-meta">KOA Wilmington (בסיס) · 25 mi</div>
           <div class="day-tags"><span class="tag tag-green">נוף</span><span class="tag tag-red">ריקון BW ✅</span></div>
         </div>
@@ -1074,8 +1036,9 @@
         <div class="attraction-row">
           <h4>📍 אטרקציות</h4>
           <div class="attraction-item"><span class="attraction-name">🏔️ Whiteface Summit Hwy — 4,867ft, תצפית 360°</span><span class="attraction-price">$30/רכב</span></div>
+          <div class="attraction-item"><span class="attraction-name">🏅 Olympic Jumping Complex</span><span class="attraction-price">~$15</span></div>
+          <div class="attraction-item"><span class="attraction-name">🏒 "Miracle on Ice" Olympic Museum</span><span class="attraction-price">~$17</span></div>
           <div class="attraction-item"><span class="attraction-name">🚣 Mirror Lake Kayak/SUP Rentals</span><span class="attraction-price">~$20/שעה</span></div>
-          <div class="attraction-item"><span class="attraction-name">🍺 Mirror Lake Brew Pub + Lake Placid Village</span><span class="attraction-price">לפי רצון</span></div>
         </div>
       </div>
     </div>
@@ -1669,20 +1632,6 @@
     <div class="budget-bar-wrap" style="margin-bottom:0;">
       <div class="budget-bar-track"><div class="budget-bar-fill" style="width:1%;background:var(--green);"></div></div>
     </div>
-
-    <div class="budget-row">
-      <div class="budget-row-name">
-        <div class="budget-icon" style="background:rgba(255,184,0,.15);">🛍️</div>
-        קניות (SoHo, 5th Ave, outlet, B&H, souvenirs)
-      </div>
-      <div class="budget-row-amounts">
-        <div class="budget-amount">$200–$600</div>
-        <div class="budget-per">$40–120/אדם (תקציב גמיש)</div>
-      </div>
-    </div>
-    <div class="budget-bar-wrap" style="margin-bottom:0;">
-      <div class="budget-bar-track"><div class="budget-bar-fill" style="width:8%;background:var(--accent2);"></div></div>
-    </div>
   </div>
 
   <div class="grid-2" style="margin-top:16px;">
@@ -1715,61 +1664,6 @@
     <div class="budget-row"><span>I-87 Thruway (כמה פעמים)</span><div><div class="budget-amount">~$35–45</div></div></div>
     <div class="budget-row"><span>Rainbow Bridge (ברגל × 5)</span><div><div class="budget-amount">~$5</div></div></div>
     <div class="budget-row" style="border:none;"><span>סה"כ Tolls משוער</span><div><div class="budget-amount">~$50–70 לקבוצה</div></div></div>
-  </div>
-
-  <!-- BOTTOM LINE — מחיר משוקלל -->
-  <div class="card" style="margin-top:20px;background:linear-gradient(135deg,rgba(255,77,28,.15),rgba(255,184,0,.08));border:2px solid var(--accent);border-radius:16px;padding:28px;">
-    <div style="font-family:var(--font-display);font-size:clamp(22px,5vw,36px);letter-spacing:3px;color:var(--accent);margin-bottom:6px;">📊 שורה תחתונה — מחיר משוקלל</div>
-    <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:20px;">אומדן משוקלל (מחצית טווח) · לאדם · כולל הכל</div>
-
-    <div class="budget-row">
-      <span>✈️ טיסות הלוך-חזור (TLV↔EWR)</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$900</div><div class="budget-per">לאדם · El Al / United</div></div>
-    </div>
-    <div class="budget-row">
-      <span>🚐 שכירות קרוואן + ביטוח + Prep Fee</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$1,100</div><div class="budget-per">לאדם (חלוקת 5)</div></div>
-    </div>
-    <div class="budget-row">
-      <span>🏕️ חניונים (21 לילות)</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$350</div><div class="budget-per">לאדם</div></div>
-    </div>
-    <div class="budget-row">
-      <span>⛽ דלק + Tolls</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$110</div><div class="budget-per">לאדם</div></div>
-    </div>
-    <div class="budget-row">
-      <span>🎢 אטרקציות (Six Flags, Rafting, Niagara...)</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$160</div><div class="budget-per">לאדם</div></div>
-    </div>
-    <div class="budget-row">
-      <span>🍔 אוכל (21 יום × ~$40/יום)</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$840</div><div class="budget-per">לאדם</div></div>
-    </div>
-    <div class="budget-row">
-      <span>🛍️ קניות + בזבוזים אישיים</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$300</div><div class="budget-per">לאדם (אומדן שמרן)</div></div>
-    </div>
-    <div class="budget-row">
-      <span>📦 ציוד + SIM + ESTA + שונות</span>
-      <div><div class="budget-amount" style="color:var(--accent);">~$120</div><div class="budget-per">לאדם</div></div>
-    </div>
-
-    <div style="margin-top:16px;padding-top:16px;border-top:2px solid var(--accent);display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:12px;">
-      <div>
-        <div style="font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">סה"כ משוקלל לאדם</div>
-        <div style="font-family:var(--font-display);font-size:clamp(42px,9vw,72px);line-height:1;color:var(--accent2);">~$3,880</div>
-        <div style="font-size:13px;color:var(--muted);margin-top:4px;">טווח ריאלי: $3,200 — $4,800 לאדם</div>
-      </div>
-      <div style="text-align:left;">
-        <div style="font-size:12px;color:var(--muted);letter-spacing:2px;text-transform:uppercase;margin-bottom:4px;">סה"כ לקבוצה של 5</div>
-        <div style="font-family:var(--font-display);font-size:clamp(28px,6vw,48px);color:var(--accent);line-height:1;">~$19,400</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:4px;">כולל טיסות + קרוואן + הכל</div>
-      </div>
-    </div>
-    <div style="margin-top:12px;font-size:11px;color:var(--muted);border-top:1px solid var(--border);padding-top:10px;line-height:1.6;">
-      ⚠️ <strong style="color:var(--accent2);">המחיר המשוקלל מבוסס על אמצע הטווח של כל קטגוריה.</strong> בזבוז נוסף / הופעות / מסעדות יוקרה = +$300–800. חיסכון אגרסיבי (בישול בקרוואן, חניונים זולים) = -$400–600. <strong>תכנון תקציב אישי מומלץ!</strong>
-    </div>
   </div>
 
 </div>
@@ -2034,7 +1928,7 @@
     </div>
     <div class="risk-body">יולי = season of thunderstorms. 5 גברים + קרוואן 25ft + גשם עמוס = מלחמת אגרופים נפשית.</div>
     <div class="risk-solution">
-      <strong>תוכנית ב':</strong> יום גשם = יום "גיקי פנימי". Saratoga Springs Bowling, קזינו Resorts World Catskills (Woodridge). Arcade ב-Lake Placid = מקורה מעולה. הכינו רשימת "ימי גשם" מראש.
+      <strong>תוכנית ב':</strong> יום גשם = יום "גיקי פנימי". Saratoga Springs MuseumS, Bowling, קזינו Resorts World Catskills (Woodridge). Olympic Museum ב-Lake Placid = מקורה מעולה. הכינו רשימת "ימי גשם" מראש.
     </div>
   </div>
 
@@ -2101,226 +1995,6 @@
     <div class="risk-body">5 גברים + קרוואן 25ft + 3 שבועות = לחץ. חילוקי דעות על קצב, תוכנית, כסף. אחד רוצה לנוח, אחר רוצה עוד אטרקציה.</div>
     <div class="risk-solution">
       <strong>תוכנית מניעה:</strong> (1) קבעו "משמרת נהג" = נהג היום לא מתווכח. (2) "ערב חופשי" בכל שבוע — כל אחד עושה מה שרוצה. (3) קובעים "קאפ יומי" תקציב משותף מראש. (4) כל אחד ישן במיטה קבועה — פחות ויכוחים.
-    </div>
-  </div>
-
-</div>
-</section>
-
-<!-- SELF DEFENSE -->
-<section id="selfdefense">
-<div class="container">
-  <div class="section-header">
-    <div class="section-label">09 — SELF DEFENSE</div>
-    <div class="section-title">🛡️ הגנה עצמית</div>
-    <div class="section-sub">כי בטיחות היא גם אחריות אישית — לא רק לוגיסטיקה</div>
-  </div>
-
-  <!-- SMILE TO THE CAMERA -->
-  <div class="card card-accent" style="margin-bottom:16px; text-align:center; padding:32px 24px;">
-    <div style="font-family:var(--font-display); font-size:clamp(28px,6vw,56px); letter-spacing:4px; color:var(--accent); margin-bottom:8px;">
-      📷 SMILE TO THE CAMERA 📷
-    </div>
-    <div style="font-size:13px; color:var(--muted); line-height:1.7;">
-      שלט ברור ובולט לחלון/דלת ה-RV. מרתיע אנשים מלהתקרב ומזכיר — אנחנו על המצלמה.<br>
-      <strong style="color:var(--accent2);">הדפס + למן ב-Walmart ביום 1 בגודל A4 לפחות.</strong>
-    </div>
-    <div style="margin-top:16px; display:inline-block; padding:14px 28px; border:3px solid var(--accent); border-radius:8px; font-family:var(--font-display); font-size:22px; letter-spacing:3px; color:var(--text);">
-      😁 SMILE — YOU'RE ON CAMERA 📸
-    </div>
-  </div>
-
-  <div class="grid-2" style="margin-bottom:16px;">
-    <!-- GPS TRACKER -->
-    <div class="card card-blue">
-      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">📡 ציפ GPS לוואן</div>
-      <div class="checklist-item" style="border:none;padding:8px 0;">
-        <div class="check-icon">📍</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">Apple AirTag / Samsung SmartTag / Tile Pro</div>
-          <div class="checklist-item-sub">הסתר בתוך הקרוואן (לא גלוי!) — מגירה, ארון מתחת לספה, בתוך ציוד. מאפשר מעקב בזמן אמת אם הרכב נגנב או נלקח ללא רשות.</div>
-        </div>
-      </div>
-      <div class="checklist-item" style="border:none;padding:4px 0;">
-        <div class="check-icon">⚠️</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-sub" style="color:var(--accent2);">שים גם ב-2 מקומות שונים בוואן — בגד אחד לא מספיק. AirTag ~$29, Tile Pro ~$35.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- PERSONAL TRACKER -->
-    <div class="card card-green">
-      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🗺️ מעקב אישי בסיור</div>
-      <div class="checklist-item" style="border:none;padding:8px 0;">
-        <div class="check-icon">📱</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">Find My Friends / Google Maps Location Sharing</div>
-          <div class="checklist-item-sub">כל 5 אנשים שותפים מיקום ביניהם. מומלץ גם ל-AirTag בתרמיל האישי. מסיר לחץ "איפה כולם" בתוך פארקים גדולים (Six Flags, Niagara).</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- PEPPER SPRAY -->
-  <div class="card card-yellow" style="margin-bottom:16px;">
-    <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:12px;">🌶️ ספריי פלפל — לכל אדם</div>
-    <div class="checklist-item">
-      <div class="check-icon">🛍️</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">קנה ב-Walmart ביום 1 — 5 יחידות</div>
-        <div class="checklist-item-sub">ספריי פלפל חוקי בכל מדינות המסלול (NJ, NY). מותג מומלץ: <strong>Sabre Red</strong> — מהאמינים בשוק. ~$12–15 ליחידה. סה"כ ~$60–75 לקבוצה.</div>
-      </div>
-    </div>
-    <div class="checklist-item">
-      <div class="check-icon">⚖️</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">חוקיות לפי מדינה — ✅ כל מדינות המסלול</div>
-        <div class="checklist-item-sub">
-          New Jersey ✅ חוקי (מעל גיל 18) · New York ✅ חוקי (מעל 18, max 4oz) · ⚠️ <strong>אסור בטיסה!</strong> קנו רק אחרי ההגעה לארה"ב.
-        </div>
-      </div>
-    </div>
-    <div class="checklist-item" style="border:none;">
-      <div class="check-icon">🎒</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">נשאו בגישה קלה — לא בתחתית התרמיל</div>
-        <div class="checklist-item-sub">כיס צדדי תרמיל, כיס מכנסיים, קליפ חגורה. מיועד להרתעה — לא לאגרסיה. בפארקים לאומיים — ודאו מדיניות כניסה.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- GENERAL SAFETY TIPS -->
-  <div class="card" style="border-color:rgba(255,77,28,.3);">
-    <div style="font-family:var(--font-display);font-size:18px;letter-spacing:2px;margin-bottom:12px;color:var(--accent);">🧠 כללי זהירות כלליים</div>
-    <div class="checklist-item">
-      <div class="check-icon">🔐</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">נעל את ה-RV תמיד — גם בקמפינג</div>
-        <div class="checklist-item-sub">לא כולם בקמפינג "חברים". ציוד, דרכונים, מחשבים — לעולם לא נשארים גלויים ליד חלון.</div>
-      </div>
-    </div>
-    <div class="checklist-item">
-      <div class="check-icon">🌃</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">אזורים מומלצי זהירות בלילה</div>
-        <div class="checklist-item-sub">Jersey City — שמרו על מרכז ה-Waterfront. בלילה — Uber ולא הליכה. NYC — Midtown/Lower Manhattan בטוחים. הימנעו מ-South Bronx / East New York בלילה.</div>
-      </div>
-    </div>
-    <div class="checklist-item" style="border:none;">
-      <div class="check-icon">📞</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">מספר חירום ארה"ב: 911</div>
-        <div class="checklist-item-sub">עובד עם כל כרטיס SIM, גם ללא קליטה. שמרו כמספר מועדף. ה-911 מאתר מיקום אוטומטית גם ללא דיבור.</div>
-      </div>
-    </div>
-  </div>
-
-</div>
-</section>
-
-<!-- CONCERTS -->
-<section id="concerts">
-<div class="container">
-  <div class="section-header">
-    <div class="section-label">10 — CONCERTS</div>
-    <div class="section-title">🎵 הופעות חיות</div>
-    <div class="section-sub">הופעות ואירועים בארה"ב בתאריכי הטיול — יולי 2027</div>
-  </div>
-
-  <div class="card card-accent" style="margin-bottom:16px;">
-    <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;">⚡ איך לבדוק הופעות בתאריכים שלנו</div>
-    <div style="font-size:13px;line-height:1.6;">
-      הטיול הוא יולי 2027 — הופעות ספציפיות עדיין לא מפורסמות. השתמשו בקישורים הבאים קרוב לתאריך (ינואר–מרץ 2027) כדי לאתר ולהזמין כרטיסים:<br>
-      <div style="margin-top:12px;display:flex;gap:8px;flex-wrap:wrap;">
-        <a href="https://www.ticketmaster.com" target="_blank" class="tag tag-blue" style="text-decoration:none;">Ticketmaster ↗</a>
-        <a href="https://www.stubhub.com" target="_blank" class="tag tag-green" style="text-decoration:none;">StubHub ↗</a>
-        <a href="https://www.songkick.com" target="_blank" class="tag tag-yellow" style="text-decoration:none;">Songkick ↗</a>
-        <a href="https://www.bandsintown.com" target="_blank" class="tag tag-red" style="text-decoration:none;">Bandsintown ↗</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="grid-2" style="margin-bottom:16px;">
-    <div class="card card-blue">
-      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🎸 ונועים / ארנות מרכזיים</div>
-      <div class="checklist-item">
-        <div class="check-icon">🏟️</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">Madison Square Garden — NYC</div>
-          <div class="checklist-item-sub">7th Ave & 32nd St, Manhattan. ימי 2–3 בטיול (Liberty Harbor). בדקו לו"ז יולי 2027.</div>
-          <a href="https://www.msg.com" target="_blank" class="checklist-item-link">msg.com ↗</a>
-        </div>
-      </div>
-      <div class="checklist-item">
-        <div class="check-icon">🎶</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">Saratoga Performing Arts Center (SPAC)</div>
-          <div class="checklist-item-sub">Saratoga Springs NY — יום 9! SPAC = עונת קיץ עמוסה (jazz, rock, symphony). פארק + הופעה = לילה מושלם.</div>
-          <a href="https://www.spac.org" target="_blank" class="checklist-item-link">spac.org ↗</a>
-        </div>
-      </div>
-      <div class="checklist-item" style="border:none;">
-        <div class="check-icon">🎵</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">Darien Lake Amphitheater — Buffalo/Niagara</div>
-          <div class="checklist-item-sub">קרוב ל-Niagara (ימים 14–15). ספיגת 17K+ קהל. בדקו לו"ז קיץ 2027.</div>
-          <a href="https://www.livenationnation.com" target="_blank" class="checklist-item-link">Live Nation ↗</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="card card-green">
-      <div style="font-size:12px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;">🎪 פסטיבלים ביולי</div>
-      <div class="checklist-item">
-        <div class="check-icon">🎷</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">Newport Jazz Festival — Rhode Island</div>
-          <div class="checklist-item-sub">בדרך כלל אמצע יולי. ~90 דקות מ-NYC. אגדי.</div>
-          <a href="https://newportjazz.org" target="_blank" class="checklist-item-link">newportjazz.org ↗</a>
-        </div>
-      </div>
-      <div class="checklist-item">
-        <div class="check-icon">🎸</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">Woodstock (Bethel Woods) Summer Shows</div>
-          <div class="checklist-item-sub">Bethel Woods Center for the Arts — על אדמת פסטיבל 1969. קרוב ל-Catskills (ימים 18–19)!</div>
-          <a href="https://www.bethelwoodscenter.org" target="_blank" class="checklist-item-link">bethelwoodscenter.org ↗</a>
-        </div>
-      </div>
-      <div class="checklist-item" style="border:none;">
-        <div class="check-icon">🎤</div>
-        <div class="checklist-item-content">
-          <div class="checklist-item-title">SPAC Jazz Fest — Saratoga Springs</div>
-          <div class="checklist-item-sub">אמצע-סוף יולי. גינה ציבורית + הופעה = חינמי חלקית. <strong style="color:var(--green);">קרוב לנתיב שלנו ביום 9!</strong></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card card-yellow">
-    <div style="font-family:var(--font-display);font-size:18px;letter-spacing:2px;margin-bottom:10px;">💡 טיפים לרכישת כרטיסי הופעות</div>
-    <div class="checklist-item">
-      <div class="check-icon">⏰</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">הזמינו 3–6 חודשים מראש לאמנים גדולים</div>
-        <div class="checklist-item-sub">Ticketmaster Presale = ב-Spotify App לאוהדים. StubHub = כרטיסים שניוניים. SeatGeek = השוואת מחירים.</div>
-      </div>
-    </div>
-    <div class="checklist-item">
-      <div class="check-icon">🎟️</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">הופעות בחינם ביולי — NYC</div>
-        <div class="checklist-item-sub">SummerStage (Central Park) · Celebrate Brooklyn! (Prospect Park) · Lincoln Center Out of Doors — כולם בחינם ביולי. בדקו summerstage.org</div>
-        <a href="https://cityparksfoundation.org/summerstage/" target="_blank" class="checklist-item-link">summerstage.org ↗</a>
-      </div>
-    </div>
-    <div class="checklist-item" style="border:none;">
-      <div class="check-icon">📅</div>
-      <div class="checklist-item-content">
-        <div class="checklist-item-title">עדכנו את הדף הזה ב-ינואר 2027!</div>
-        <div class="checklist-item-sub">רוב ההופעות לקיץ 2027 יתפרסמו בתחילת 2027. חפשו לפי תאריכים: יולי 1–21, 2027 בכל האתרים למעלה.</div>
-      </div>
     </div>
   </div>
 
