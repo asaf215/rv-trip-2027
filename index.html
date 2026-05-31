@@ -402,6 +402,7 @@
     <button class="nav-btn" onclick="showSection('devil', this)">😈 פרקליט השטן</button>
     <button class="nav-btn" onclick="showSection('selfdefense', this)">🛡️ הגנה עצמית</button>
     <button class="nav-btn" onclick="showSection('concerts', this)">🎵 הופעות</button>
+    <a href="events.html" class="nav-btn" style="text-decoration:none;background:rgba(255,184,0,.15);color:var(--accent2);border:1px solid rgba(255,184,0,.3);">📋 לוז יומי מפורט ↗</a>
   </div>
 </nav>
 
@@ -674,13 +675,16 @@
     <div class="section-label">03 — ITINERARY</div>
     <div class="section-title">📅 לו״ז יומי</div>
     <div class="section-sub">21 ימים · 3 שבועות · הלוך ושוב מאדיסון NJ</div>
+    <div style="margin-top:14px;">
+      <a href="events.html" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(255,184,0,.15);color:#ffb800;border:1px solid rgba(255,184,0,.4);border-radius:8px;font-size:13px;font-weight:700;text-decoration:none;letter-spacing:.5px;transition:all .2s;" onmouseover="this.style.background='rgba(255,184,0,.28)'" onmouseout="this.style.background='rgba(255,184,0,.15)'">📋 פתח לוז יומי מפורט ↗</a>
+    </div>
   </div>
 
   <!-- TIMELINE VISUAL -->
   <div class="timeline-visual">
     <div class="tl-day" onclick="openDay(1)"><div class="tl-icon">✈️</div><div class="tl-num">01</div><div class="tl-dot" style="background:var(--accent)"></div><div class="tl-city">Edison→JC</div></div>
     <div class="tl-connector"></div>
-    <div class="tl-day" onclick="openDay(2)"><div class="tl-icon">🕹️</div><div class="tl-num">02</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">Jersey City</div></div>
+    <div class="tl-day" onclick="openDay(2)"><div class="tl-icon">🏝️</div><div class="tl-num">02</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">Jersey City</div></div>
     <div class="tl-connector"></div>
     <div class="tl-day" onclick="openDay(3)"><div class="tl-icon">🎮</div><div class="tl-num">03</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">NYC</div></div>
     <div class="tl-connector"></div>
@@ -690,7 +694,7 @@
     <div class="tl-connector"></div>
     <div class="tl-day" onclick="openDay(6)"><div class="tl-icon">🕹️</div><div class="tl-num">06</div><div class="tl-dot" style="background:var(--accent3)"></div><div class="tl-city">Asbury Pk</div></div>
     <div class="tl-connector"></div>
-    <div class="tl-day" onclick="openDay(7)"><div class="tl-icon">🚐</div><div class="tl-num">07</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Hudson Val.</div></div>
+    <div class="tl-day" onclick="openDay(7)"><div class="tl-icon">🛍️</div><div class="tl-num">07</div><div class="tl-dot" style="background:var(--accent2)"></div><div class="tl-city">Hudson Val.</div></div>
     <div class="tl-connector"></div>
     <div class="tl-day" onclick="openDay(8)"><div class="tl-icon">🚐</div><div class="tl-num">08</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Adirondack</div></div>
     <div class="tl-connector"></div>
@@ -702,7 +706,7 @@
     <div class="tl-connector"></div>
     <div class="tl-day" onclick="openDay(12)"><div class="tl-icon">🏔️</div><div class="tl-num">12</div><div class="tl-dot" style="background:var(--green)"></div><div class="tl-city">Whiteface</div></div>
     <div class="tl-connector"></div>
-    <div class="tl-day" onclick="openDay(13)"><div class="tl-icon">🚐</div><div class="tl-num">13</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Oneida</div></div>
+    <div class="tl-day" onclick="openDay(13)"><div class="tl-icon">🎰</div><div class="tl-num">13</div><div class="tl-dot" style="background:var(--accent2)"></div><div class="tl-city">Oneida</div></div>
     <div class="tl-connector"></div>
     <div class="tl-day" onclick="openDay(14)"><div class="tl-icon">🚐</div><div class="tl-num">14</div><div class="tl-dot" style="background:var(--muted)"></div><div class="tl-city">Niagara</div></div>
     <div class="tl-connector"></div>
@@ -765,9 +769,9 @@
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">02</div>
         <div class="day-title-block">
-          <div class="day-title">🕹️ Tenafly + Barcade Brooklyn</div>
+          <div class="day-title">🏝️ Governors Island + Williamsburg Nightlife</div>
           <div class="day-meta">Liberty Harbor (בסיס RV) · 0 mi נסיעת RV · Uber בלבד</div>
-          <div class="day-tags"><span class="tag tag-blue">גיקי</span><span class="tag tag-red">ריקון BW ✅</span></div>
+          <div class="day-tags"><span class="tag tag-blue">גיקי</span><span class="tag tag-green">🆕 שדרוג</span></div>
         </div>
         <div class="day-arrow">▾</div>
       </div>
@@ -775,12 +779,16 @@
         <div class="attraction-row">
           <h4>📍 אטרקציות יום 2</h4>
           <div class="attraction-item">
-            <span class="attraction-name">🏘️ Tenafly NJ + Fort Lee Historic Park</span>
+            <span class="attraction-name">🌉 Brooklyn Bridge Walk — לפני 10:00</span>
             <span class="attraction-price">חינם</span>
           </div>
           <div class="attraction-item">
-            <span class="attraction-name">🕹️ Barcade Brooklyn — 200+ מכונות ארקייד</span>
-            <div style="text-align:right;"><span class="attraction-price">$0 כניסה + מכונות</span><br><a href="https://barcadebarnyc.com" target="_blank" class="attraction-link">barcadebarnyc.com ↗</a></div>
+            <span class="attraction-name">🏝️ Governors Island — Slide Hill (מגלשה 57ft) + תצפית 360°</span>
+            <span class="attraction-price">פרי $5 + מגלשות $9</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🌆 Williamsburg Brooklyn — ART Rooftop + Black Flamingo Nightlife</span>
+            <span class="attraction-price">$20–40/אדם</span>
           </div>
         </div>
         <div class="card" style="background:rgba(255,77,28,.08);border-color:rgba(255,77,28,.3);margin-top:10px;font-size:12px;padding:10px;">
@@ -935,9 +943,9 @@
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">07</div>
         <div class="day-title-block">
-          <div class="day-title">🚐 עמק ה-Hudson — Saugerties NY</div>
-          <div class="day-meta">Tip Tam → I-78E → I-287N → I-87N → Saugerties · 110 mi</div>
-          <div class="day-tags"><span class="tag tag-green">נוף</span><span class="tag tag-yellow">Full Hookup ★</span></div>
+          <div class="day-title">🛍️ Woodbury Common → Storm King → Hudson Valley</div>
+          <div class="day-meta">Tip Tam → I-87N → Woodbury → Storm King → Saugerties · 110 mi</div>
+          <div class="day-tags"><span class="tag tag-green">🆕 שדרוג</span><span class="tag tag-yellow">קניות</span><span class="tag tag-green">נוף</span></div>
         </div>
         <div class="day-arrow">▾</div>
       </div>
@@ -947,9 +955,19 @@
           <div class="day-info-item"><strong>מחיר</strong>$55–75 / לילה · (845) 246-8334</div>
         </div>
         <div class="attraction-row">
-          <h4>📍 בדרך / בערב</h4>
-          <div class="attraction-item"><span class="attraction-name">🏠 Saugerties Lighthouse (Uber 2 mi)</span><span class="attraction-price">חינם</span></div>
-          <div class="attraction-item"><span class="attraction-name">🎸 Woodstock Preview (8 mi)</span><span class="attraction-price">חינם</span></div>
+          <h4>📍 אטרקציות יום 7</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🛍️ Woodbury Common Premium Outlets — 250+ חנויות, 25–65% הנחה</span>
+            <span class="attraction-price">חנייה חינם + קניות</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🗿 Storm King Art Center — 500 דונם פסלי ענק, Mark di Suvero, Calder</span>
+            <span class="attraction-price">~$25/אדם, חנייה חינם</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🎸 Woodstock NY — Tinker Street (גלריות, ויניל, Oriole 9)</span>
+            <span class="attraction-price">חינם + $15–20 אוכל</span>
+          </div>
           <div class="attraction-item"><span class="attraction-name">🛣️ Thruway Toll I-87</span><span class="attraction-price">~$6–8</span></div>
         </div>
       </div>
@@ -1084,9 +1102,9 @@
       <div class="day-header" onclick="toggleDay(this)">
         <div class="day-num">13</div>
         <div class="day-title-block">
-          <div class="day-title">🚐 מסע מערב — Oneida Lake</div>
-          <div class="day-meta">Wilmington → Route 86W → I-87S → I-90W → Exit 34 · 130 mi</div>
-          <div class="day-tags"><span class="tag tag-yellow">Full Hookup ★</span></div>
+          <div class="day-title">🎰 Turning Stone Resort & Casino</div>
+          <div class="day-meta">Wilmington → I-87S → I-90W → Verona NY · 130 mi</div>
+          <div class="day-tags"><span class="tag tag-green">🆕 שדרוג</span><span class="tag tag-yellow">קזינו</span></div>
         </div>
         <div class="day-arrow">▾</div>
       </div>
@@ -1094,6 +1112,17 @@
         <div class="day-info-row">
           <div class="day-info-item"><strong>לינה</strong>Verona Beach Campground · Oneida Lake NY · $55–70 / לילה</div>
           <div class="day-info-item"><strong>Toll</strong>NY Thruway I-90 ~$8</div>
+        </div>
+        <div class="attraction-row">
+          <h4>📍 אטרקציות יום 13</h4>
+          <div class="attraction-item">
+            <span class="attraction-name">🎰 Turning Stone Resort & Casino — 120,000 sqft, 2,000 סלוטים, 66 שולחנות Vegas-style</span>
+            <span class="attraction-price">כניסה חינם + הימורים</span>
+          </div>
+          <div class="attraction-item">
+            <span class="attraction-name">🃏 חדר פוקר — הגדול ביותר ב-NY · Lava Nightclub · 20+ מסעדות</span>
+            <span class="attraction-price">שתייה חינמית בזמן משחק</span>
+          </div>
         </div>
         <div class="card" style="background:rgba(0,229,255,.06);border-color:rgba(0,229,255,.2);margin-top:10px;font-size:12px;padding:10px;">
           🧠 <strong>תחנת ביניים אסטרטגית:</strong> Lake Placid → Niagara ישיר = 240 mi (מעל המגבלה). Verona Beach = פיצול מושלם: 130 + 145 = 275 mi בשני ימים.
